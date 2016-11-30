@@ -1,15 +1,14 @@
 import json
 
-import Dimensions
-import GlobalAttributes
-import Variables
+from Dimensions import Dimensions
+from GlobalAttributes import GlobalAttributes
+from Variables import Variables
 
 
-class Metadata():
+class Metadata(object):
     def __init__(self, source):
         with open(source) as data_file:
             data = json.load(data_file)
-
         self.globalAttributes = GlobalAttributes(data)
         self.dimensions = Dimensions(data)
         self.variables = Variables(data)

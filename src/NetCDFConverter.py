@@ -1,9 +1,18 @@
-from inputData import Metadata
+from src.inputData.Data import *
+from src.inputData.Metadata import *
 
 
-class NCFile(object):
-    def __init__(self, metadateFile, csvFile, ncOutput):
-        self.metadataFile = metadateFile
+class NetCDFConverter(object):
+    def __init__(self, metadataFile, csvFile, ncOutput):
+        self.metadataFile = metadataFile
+        Metadata(metadataFile)
         self.csvFile = csvFile
         self.ncOutput = ncOutput
         self.metadata = Metadata(self.metadataFile)
+        self.data = Data(csvFile)
+
+
+""""
+if __name__ == '__main__':
+    NetCDFConverter()
+"""

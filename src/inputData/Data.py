@@ -14,3 +14,7 @@ class Data(object):
 
     def getHeader(self):
         return self.header
+
+    def getDataByColumn(self, column):
+        if column in self.data and self.data[column] != "":
+            return self.data[:, column]

@@ -15,6 +15,7 @@ class NetCDFConverter(object):
         self.globalAttributes = Metadata(metadataFile).getGlobalAttributes()
         self.globalAttributes.writeAttributes(self.ncOutput)
         self.dimensions.writeDimensions(ncOutput)
+        self.variables.writeVariables(ncFile)
 
 """
 if __name__ == '__main__':

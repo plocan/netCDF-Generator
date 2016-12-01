@@ -12,3 +12,4 @@ class GlobalAttributes():
 
     def getAttributesListIterator(self):
         return self.attributesList.iteritems()
+

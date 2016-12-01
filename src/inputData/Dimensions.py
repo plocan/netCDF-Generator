@@ -1,10 +1,11 @@
 class Dimensions():
-    def __init__(self, data):
+    def __init__(self, metadata):
         self.dimensionsList = {}
-        self.createDimensionList(data)
+        self.metadata = metadata
+        self.createDimensionList()
 
-    def createDimensionList(self, data):
-        for dimension in data["dimensions"]:
+    def createDimensionList(self):
+        for dimension in self.metadata["dimensions"]:
             self.dimensionsList[dimension["dimension_name"]] = dimension["length"]
 
     def getDimensionsList(self):
@@ -17,6 +18,6 @@ class Dimensions():
         return self.dimensionsList.iteritems()
 
     def writeDimensions(self, ncFile):
-        dimensions = self.data['dimensions']
+        dimensions = self.metadata['dimensions']
         for dimension in dimensions:
             ncFile.createDimension(dimension['dimension_name'], dimension['length'])

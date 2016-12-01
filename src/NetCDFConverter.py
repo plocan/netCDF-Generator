@@ -11,11 +11,11 @@ class NetCDFConverter(object):
         # self.ncOutput = ncOutput
         self.metadata = Metadata(metadataFile)
         self.data = Data(csvFile)
-        self.ncOutput = Dataset(self.ncOutput, 'w', 'NETCDF4')
+        self.ncFile = Dataset(self.File, 'w', 'NETCDF4')
         self.globalAttributes = Metadata(metadataFile).getGlobalAttributes()
-        self.globalAttributes.writeAttributes(self.ncOutput)
-        self.dimensions.writeDimensions(ncOutput)
-        self.variables.writeVariables(ncFile)
+        self.globalAttributes.writeAttributes(self.ncFile)
+        self.dimensions.writeDimensions(self.ncFile)
+        self.variables.writeVariables(self.ncFile)
 
 """
 if __name__ == '__main__':

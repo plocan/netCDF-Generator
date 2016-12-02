@@ -1,0 +1,11 @@
+[12/02/2016 01:41:36 PM] INFO: Prueba info
+[12/02/2016 01:41:36 PM] WARNING: Primer Warning
+[12/02/2016 01:41:36 PM] INFO: Estoy en Dimension
+[12/02/2016 01:41:36 PM] INFO: Estoy en Dimension
+[12/02/2016 01:42:46 PM] INFO: Prueba info
+[12/02/2016 02:05:29 PM] INFO: Prueba info
+[12/02/2016 02:05:40 PM] INFO: Prueba info
+[12/02/2016 02:06:13 PM] INFO: Prueba info
+[12/02/2016 02:06:50 PM] INFO: Prueba info
+[12/02/2016 02:16:54 PM] INFO: [Begin] conversion to NetCDF of : /Users/juancarlos/PycharmProjects/prueba/test.json  /Users/juancarlos/PycharmProjects/prueba/test.dat  /Users/juancarlos/PycharmProjects/prueba/test.nc
+[12/02/2016 02:16:54 PM] INFO: [Finished] conversion to NetCDF of : /Users/juancarlos/PycharmProjects/prueba/test.json  /Users/juancarlos/PycharmProjects/prueba/test.dat  /Users/juancarlos/PycharmProjects/prueba/test.nc

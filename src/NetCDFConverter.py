@@ -1,24 +1,24 @@
 from netCDF4 import Dataset
 
 from src.inputData.Data import *
+from src.inputData.Log import Log
 from src.inputData.Metadata import *
 
 
 class NetCDFConverter(object):
     def __init__(self, metadataFile, csvFile, ncOutput):
-        # self.metadataFile = metadataFile
-        # self.csvFile = csvFile
-        # self.ncOutput = ncOutput
+        Log().setLogInfo("[Begin] conversion to NetCDF of: " + metadataFile +"  "+ csvFile+"  "+ ncOutput)
         self.metadata = Metadata(metadataFile)
         self.metadataData = self.metadata.getMetadata()
         self.data = Data(csvFile)
-        self.ncFile = Dataset(ncOutput, 'w', 'NETCDF4')
+        self.ncFile = Dataset(ncOutput, 'w', format='NETCDF4')
         self.dimensions = self.metadata.getDimensions()
         self.globalAttributes = Metadata(metadataFile).getGlobalAttributes()
         self.globalAttributes.writeAttributes(self.ncFile)
         self.dimensions.writeDimensions(self.ncFile)
         self.variables = self.metadata.getVariables()
         self.writeVariablesData()
+        Log().setLogInfo("[Finished] conversion to NetCDF of : "+ metadataFile + "  " + csvFile + "  " + ncOutput)
 
     def writeVariablesData(self):
         variables = self.metadataData['variables']
@@ -32,5 +32,5 @@ class NetCDFConverter(object):
 
 
 if __name__ == '__main__':
-    NetCDFConverter('/Users/Loedded/Downloads/xx.json', '/Users/Loedded/Downloads/xx.dat',
-                    '/Users/Loedded/Downloads/xx.nc')
+    NetCDFConverter('/Users/juancarlos/PycharmProjects/prueba/test.json', '/Users/juancarlos/PycharmProjects/prueba/test.dat',
+                    '/Users/juancarlos/PycharmProjects/prueba/test.nc')

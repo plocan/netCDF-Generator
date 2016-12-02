@@ -1,32 +1,27 @@
-import csv
-
 import numpy as numpy
-
-from src.tools import tools
+import pandas as pandas
 
 
 class Data(object):
     def __init__(self, sourceCSV):
-        csvFile = csv.reader(open(sourceCSV), delimiter=',')
-        self.header = csvFile.next()
-        self.data = numpy.loadtxt(sourceCSV, delimiter=',', skiprows=2)
+        self.data = pandas.read_csv(sourceCSV)
+
 
     def getDataList(self):
         return self.data
 
     def getHeader(self):
-        return self.header
+        return self.data.columns
 
     def getDataByColumn(self, column):
-        if column in self.data and self.data[column] != "":
-            return self.data[:, column]
+        return self.data[column]
 
     def writeData(self, ncFile, variable, variableCreated):
         if 'value' in variable and variable['value'] != "":
             variableCreated[:] = self.convert_value(variable)
         elif 'csvcolumn' in variable and variable['csvcolumn'] != "":
-            index = tools.indexvar(variable['csvcolumn'], self.header)
-            variableCreated[:] = self.data[:, index]
+            variableCreated[:] = self.getDataByColumn(variable['csvcolumn']).as_matrix()
+
 
     def convert_value(self, var):
         if var['typeof'] in ["str", "S1", "S"]:

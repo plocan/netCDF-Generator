@@ -1,3 +1,4 @@
+import re
 from datetime import datetime as dt
 
 class GlobalAttributes():
@@ -30,3 +31,6 @@ class GlobalAttributes():
                 setattr(netCDF, attribute, self.attributesList[attribute])
 
         netCDF.date_created = str(dt.now().date()) + 'T' + str(dt.now().time()) + 'Z'
+
+    def getNetCDFVersion(self):
+        return re.sub("\D", "", self.attributesList["netcdf_version"])

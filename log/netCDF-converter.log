@@ -69,3 +69,49 @@
 [12/07/2016 10:44:59 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xax.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
 [12/07/2016 10:44:59 AM] ERROR: Not found .json file. (Metadata file)
 [12/07/2016 10:44:59 AM] INFO: The script has closed unsatisfactorily
+[12/07/2016 10:58:00 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 10:58:00 AM] ERROR: Not .csv / .data file. (Data file)
+[12/07/2016 10:58:00 AM] INFO: The script has closed unsatisfactorily
+[12/07/2016 10:58:40 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 10:58:40 AM] ERROR: Not .csv / .data file. (Data file)
+[12/07/2016 10:58:40 AM] INFO: The script has closed unsatisfactorily
+[12/07/2016 11:03:26 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:03:26 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:08:41 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:08:41 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:08:59 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:08:59 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:20:00 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:20:01 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:21:50 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:22:10 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:22:10 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:23:07 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:23:31 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:27:38 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:28:52 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:32:43 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:35:36 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:37:14 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:37:14 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:37:28 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:37:52 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:37:54 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:46:23 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:46:44 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 11:49:38 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:01:07 PM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:01:38 PM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:02:02 PM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:02:16 PM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:03:04 PM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:05:26 PM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:08:29 PM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:08:31 PM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:19:38 PM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:20:28 PM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:20:48 PM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:21:02 PM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:21:04 PM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:21:11 PM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 12:21:12 PM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc

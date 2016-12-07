@@ -16,8 +16,12 @@ class NetCDFConverter(object):
         self.metadata = Metadata(metadataFile)
         self.metadataData = self.metadata.getMetadata()
         self.data = Data(csvFile)
-        self.ncFile = Dataset(ncOutput, 'w', format='NETCDF4')
+
+        self.version = self.metadata.getGlobalAttributes().getNetCDFVersion()
+        self.ncFile = Dataset(ncOutput, 'w', format='NETCDF' + self.version + '_CLASSIC')
         # self.ncFile = Dataset(ncOutput, 'w', format='NETCDF3_CLASSIC')
+
+
         self.dimensions = self.metadata.getDimensions()
         self.globalAttributes = Metadata(metadataFile).getGlobalAttributes()
         self.globalAttributes.writeAttributes(self.ncFile)
@@ -31,7 +35,8 @@ class NetCDFConverter(object):
         variablesNames = ['_FillValue', 'variable_name', 'typeof', 'dim', 'value', 'csvcolumn']
 
         for variable in variables:
-            variableCreated = self.variables.writeVariables(self.ncFile, variable)
+            variableCreated = self.variables.writeVariables(self.ncFile, variable, self.version)
+
             self.data.writeData(self.ncFile, variable, variableCreated)
             self.variables.deleteAttributes(variablesNames, variable)
             self.variables.addAttributeToVariable(variableCreated, variable)
@@ -41,7 +46,7 @@ class NetCDFConverter(object):
             Log().setLogError('Not found .json file. (Metadata file)')
             Log().setLogInfo('The script has closed unsatisfactorily')
             sys.exit(-1)
-        elif os.path.exists(csvFile):
+        elif os.path.exists(csvFile) == False:
             Log().setLogError('Not .csv / .data file. (Data file)')
             Log().setLogInfo('The script has closed unsatisfactorily')
             sys.exit(-1)

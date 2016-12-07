@@ -28,6 +28,18 @@ class Variables():
                                                zlib=True, complevel=9)
         return ncVariable
 
+    """
+        NetCDF3
+        def createVariables(self, ncFile, variable):
+        fillVal = variable['_FillValue'] if '_FillValue' in variable and variable['_FillValue'] != "" else False
+        if 'dim' in variable and variable['dim'] != "":
+            ncVariable = ncFile.createVariable(variable['variable_name'], variable['typeof'], (variable['dim']))
+        else:
+            ncVariable = ncFile.createVariable(variable['variable_name'], variable['typeof'])
+        setattr(ncVariable, 'fill_value', float(fillval))
+        return ncVariable
+    """
+
     def addAttributeToVariable(self, variable, attributes):
         for attribute in attributes:
             if attributes[attribute]:

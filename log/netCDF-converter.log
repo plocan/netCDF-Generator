@@ -9,3 +9,63 @@
 [12/02/2016 02:06:50 PM] INFO: Prueba info
 [12/02/2016 02:16:54 PM] INFO: [Begin] conversion to NetCDF of : /Users/juancarlos/PycharmProjects/prueba/test.json  /Users/juancarlos/PycharmProjects/prueba/test.dat  /Users/juancarlos/PycharmProjects/prueba/test.nc
 [12/02/2016 02:16:54 PM] INFO: [Finished] conversion to NetCDF of : /Users/juancarlos/PycharmProjects/prueba/test.json  /Users/juancarlos/PycharmProjects/prueba/test.dat  /Users/juancarlos/PycharmProjects/prueba/test.nc
+[12/07/2016 09:01:45 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:01:45 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:02:17 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:02:17 AM] WARNING: NETCDF: Not found column for: AIRT
+[12/07/2016 09:02:17 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:03:34 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:03:35 AM] WARNING: NETCDF: Not found column for: AIRT standard name: air_temperature
+[12/07/2016 09:03:35 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:08:01 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:08:01 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:08:17 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:14:33 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:14:33 AM] WARNING: NETCDF: Not found column for: AIRTE standard name: air_temperature
+[12/07/2016 09:14:34 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:15:03 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:15:04 AM] WARNING: NETCDF: Not found column for: AIRTe standard name: AIRT
+[12/07/2016 09:15:04 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:16:02 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:16:02 AM] WARNING: NETCDF: Not found column for: AIRT standard name: air_temperature
+[12/07/2016 09:16:02 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:16:53 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:16:53 AM] WARNING: NETCDF: Not found column for: AIRT standard name: air_temperature
+[12/07/2016 09:16:53 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:17:47 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:17:47 AM] WARNING: NETCDF: Not found column for: AIRT standard name: air_temperature
+[12/07/2016 09:17:47 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:19:33 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:19:33 AM] WARNING: NETCDF: Not found column for: AIRT standard name: air_temperature
+[12/07/2016 09:19:33 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:20:11 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:20:14 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:20:15 AM] WARNING: NETCDF: Not found column for: AIRT standard name: air_temperature
+[12/07/2016 09:20:15 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:20:59 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:20:59 AM] WARNING: NETCDF: Not found column for: AIRT standard name: air_temperature
+[12/07/2016 09:20:59 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:23:44 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:23:44 AM] WARNING: NETCDF: Not found column for: AIRT standard name: air_temperature
+[12/07/2016 09:23:44 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:25:26 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:25:27 AM] WARNING: NETCDF: Not found column for: AIRT standard name: air_temperature
+[12/07/2016 09:25:27 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:25:55 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:25:56 AM] WARNING: NETCDF: Not found column for: AIRT standard name: air_temperature
+[12/07/2016 09:25:56 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:26:22 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 09:26:23 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 10:08:47 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 10:09:26 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 10:11:52 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 10:12:42 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 10:12:44 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 10:13:27 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 10:13:53 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 10:14:32 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 10:15:03 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 10:15:03 AM] WARNING: Not found dimensions on .json file.
+[12/07/2016 10:44:59 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xax.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads/xx.nc
+[12/07/2016 10:44:59 AM] ERROR: Not found .json file. (Metadata file)
+[12/07/2016 10:44:59 AM] INFO: The script has closed unsatisfactorily

@@ -7,8 +7,13 @@ class GlobalAttributes():
         self.createAttributeList()
 
     def createAttributeList(self):
-        for key, value in self.data["global_attributes"].items():
-            self.attributesList[key] = value
+        try:
+            for key, value in self.data["global_attributes"].items():
+                self.attributesList[key] = value
+        except:
+            Log().setLogError('Not found global_attributes on .json file.')
+            Log().setLogInfo('The script has closed unsatisfactorily')
+            sys.exit(-1)
 
     def getAttributesList(self):
         return self.attributesList.keys()

@@ -11,16 +11,10 @@ class Variables():
         return self.variablesList[key].iteritems()
 
     def writeVariables(self, ncFile, variable, version):
-        # return self.createVariables(ncFile, variable, version)
         if version == '3':
             return self.createVariablesForNetCDF3(ncFile, variable)
         elif version == '4':
             return self.createVariablesForNetCDF4(ncFile, variable)
-
-
-            #self.add_data(NcVar, var)
-            #self.deleteatts(varNames, var)
-            #self.add_atts(NcVar, var)
 
     def createVariablesForNetCDF4(self, ncFile, variable):
         fillVal = variable['_FillValue'] if '_FillValue' in variable and variable['_FillValue'] != "" else False

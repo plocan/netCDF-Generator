@@ -1,6 +1,11 @@
 import re
 from datetime import datetime as dt
 
+import sys
+
+from src.inputData.Log import Log
+
+
 class GlobalAttributes():
     def __init__(self, data):
         self.data = data
@@ -34,3 +39,6 @@ class GlobalAttributes():
 
     def getNetCDFVersion(self):
         return re.sub("\D", "", self.attributesList["netcdf_version"])
+
+    def getID(self):
+        return self.attributesList["id"]

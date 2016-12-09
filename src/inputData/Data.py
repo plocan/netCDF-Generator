@@ -8,7 +8,6 @@ class Data(object):
     def __init__(self, sourceCSV):
         self.data = pandas.read_csv(sourceCSV)
 
-
     def getDataList(self):
         return self.data
 
@@ -25,7 +24,7 @@ class Data(object):
         else:
             return False
 
-    def writeData(self, ncFile, variable, variableCreated):
+    def writeData(self, ncFile, variable, variableCreated, version):
         if 'value' in variable and variable['value'] != "":
             variableCreated[:] = self.convert_value(variable)
         elif 'csvcolumn' in variable and variable['csvcolumn'] != "":
@@ -40,7 +39,31 @@ class Data(object):
             Log().setLogWarning(
                 'NETCDF: Not found column for: ' + variable['variable_name'] + ' standard name: ' + variable[
                     'standard_name'])
+        setattr(variableCreated, '_ChunkSizes', len(variableCreated[:]))
 
+    def appendData(self, variable, variableNetCDF, chunkSizes):
+        if 'value' in variable and variable['value'] != "":
+            return 0
+        elif 'csvcolumn' in variable and variable['csvcolumn'] != "":
+            dataNetCDF = pandas.DataFrame(variableNetCDF[:chunkSizes])
+            dataCSV = pandas.Series(self.getDataByColumn(variable['csvcolumn']))
+            variableNetCDF[:] = pandas.concat([dataNetCDF, dataCSV], ignore_index=True, axis=0).as_matrix()
+        elif 'variable_name' in variable and variable['variable_name'] != "" and self.isColumnExist(
+                variable['variable_name']):
+            dataNetCDF = pandas.DataFrame(variableNetCDF[:chunkSizes])
+            dataCSV = pandas.Series(self.getDataByColumn(variable['variable_name']))
+            variableNetCDF[:] = pandas.concat([dataNetCDF, dataCSV], ignore_index=True, axis=0).as_matrix()
+        elif 'standard_name' in variable and variable['standard_name'] != "" and self.isColumnExist(
+                variable['standard_name']):
+            dataNetCDF = pandas.DataFrame(variableNetCDF[:chunkSizes])
+            dataCSV = pandas.Series(self.getDataByColumn(variable['standard_name']))
+            variableNetCDF[:] = pandas.concat([dataNetCDF, dataCSV], ignore_index=True, axis=0).as_matrix()
+        else:
+            Log().setLogWarning(
+                'NETCDF: Not found column for: ' + variable['variable_name'] + ' standard name: ' + variable[
+                    'standard_name'])
+
+        setattr(variableNetCDF, '_ChunkSizes', len(variableNetCDF[:]))
 
     def convert_value(self, var):
         if var['typeof'] in ["str", "S1", "S"]:

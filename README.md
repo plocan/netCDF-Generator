@@ -1,4 +1,4 @@
-![Picture](https://empleo.plocan.eu/static/plocan.png)
+![Picture](http://empleo.plocan.eu/static/plocan.png)
 # netCDF-convert
 
 ## Table of contents
@@ -19,7 +19,8 @@
 ## Authors
 
 * **Tania Morales** - *Team manager* - tania.morales@plocan.eu
-* **Añadir** - *Developer* - .ext@plocan.eu
-* **Añadir** - *Developer* - .ext@plocan.eu
+* **Pablo Armas Matín** - *Developer* - pablo.armas.ext@plocan.eu
+* **Juan Carlos Arroyo Herrera** - *Developer* - juan.arroyo.ext@plocan.eu
+* **Ismael Romero Rando** - *Developer* - isamel.romero.ext@plocan.eu
 
 

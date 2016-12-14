@@ -1,8 +1,9 @@
-import re
+import os
 from datetime import datetime as dt
 
 import sys
 
+from src.NetCDFConverter import NetCDFConverter
 from src.inputData.Log import Log
 
 
@@ -38,7 +39,7 @@ class GlobalAttributes():
         netCDF.date_created = str(dt.now().date()) + 'T' + str(dt.now().time()) + 'Z'
 
     def getNetCDFVersion(self):
-        return re.sub("\D", "", self.attributesList["netcdf_version"])
+        return self.attributesList["netcdf_version"]
 
     def getID(self):
         return self.attributesList["id"]

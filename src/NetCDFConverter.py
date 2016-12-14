@@ -13,65 +13,83 @@ class NetCDFConverter(object):
         Log().setLogInfo("[Begin] conversion to NetCDF of: " + metadataFile + "  " + csvFile + "  " + ncOutput)
         self.ncOutput = ncOutput
         self.checkSource(metadataFile, csvFile)
-
         self.metadata = Metadata(metadataFile)
         self.metadataData = self.metadata.getMetadata()
         self.data = Data(csvFile)
-
         self.ncOutput = self.ncOutput + self.metadata.getGlobalAttributes().getID() + ".nc"
         self.version = self.metadata.getGlobalAttributes().getNetCDFVersion()
-        if self.version == '3':
-            self.format = '3_CLASSIC'
-        else:
-            self.format = '4'
-
-        if os.path.exists(self.ncOutput) == False:
-            self.ncFile = Dataset(self.ncOutput, 'w', format='NETCDF' + self.format)
-
+        self.version = self.version.replace(' ', '_')
+        if not os.path.exists(self.ncOutput):
+            self.ncFile = Dataset(self.ncOutput, 'w', format='NETCDF' + self.version)
             self.dimensions = self.metadata.getDimensions()
             self.globalAttributes = Metadata(metadataFile).getGlobalAttributes()
             self.globalAttributes.writeAttributes(self.ncFile)
             self.dimensions.writeDimensions(self.ncFile)
             self.variables = self.metadata.getVariables()
             self.writeVariablesData()
-
         else:
             self.ncFile = Dataset(self.ncOutput, 'r+')
             self.writeAppendVariablesData()
 
+        """try:
+            if not os.path.exists(self.ncOutput):
+                self.ncFile = Dataset(self.ncOutput, 'w', format='NETCDF' + self.version)
+                self.dimensions = self.metadata.getDimensions()
+                self.globalAttributes = Metadata(metadataFile).getGlobalAttributes()
+                self.globalAttributes.writeAttributes(self.ncFile)
+                self.dimensions.writeDimensions(self.ncFile)
+                self.variables = self.metadata.getVariables()
+                self.writeVariablesData()
+            else:
+                self.ncFile = Dataset(self.ncOutput, 'r+')
+                self.writeAppendVariablesData()
+        except:
+            Log().setLogError("FATAL ERROR")
+            Log().setLogInfo('The script has closed unsatisfactorily')
+            #self.deleteNcFile()"""
         Log().setLogInfo("[Finished] conversion to NetCDF of : " + metadataFile + "  " + csvFile + "  " + ncOutput)
 
     def writeVariablesData(self):
         variables = self.metadataData['variables']
         variablesNames = ['_FillValue', 'variable_name', 'typeof', 'dim', 'value', 'csvcolumn']
-
         for variable in variables:
             variableCreated = self.variables.writeVariables(self.ncFile, variable, self.version)
-            self.data.writeData(self.ncFile, variable, variableCreated, self.version)
+            self.data.writeData(variable, variableCreated)
             self.variables.deleteAttributes(variablesNames, variable)
             self.variables.addAttributeToVariable(variableCreated, variable)
 
     def checkSource(self, metadataFile, csvFile):
-        if os.path.exists(metadataFile) == False:
+        if not os.path.exists(metadataFile):
             Log().setLogError('Not found .json file. (Metadata file)')
             Log().setLogInfo('The script has closed unsatisfactorily')
             sys.exit(-1)
-        elif os.path.exists(csvFile) == False:
+        elif not os.path.exists(csvFile):
             Log().setLogError('Not .csv / .data file. (Data file)')
             Log().setLogInfo('The script has closed unsatisfactorily')
             sys.exit(-1)
         finalCharacter = self.ncOutput[len(self.ncOutput) - 1]
         if finalCharacter != '/':
-            self.ncOutput = self.ncOutput + '/'
+            self.ncOutput += '/'
 
     def writeAppendVariablesData(self):
         variables = self.metadataData['variables']
-
+        size = 0
         for variable in variables:
-            self.data.appendData(variable, self.ncFile.variables[variable['variable_name']],
-                                 getattr(self.ncFile.variables[variable['variable_name']], '_ChunkSizes'))
+            sizeData = len(self.ncFile.variables[variable['variable_name']][:])
+            if 'value' in variable and variable['value'] != "":
+                continue
+            elif size == 0:
+                size = len(self.ncFile.variables[variable['variable_name']][:])
+                self.data.appendData(variable, self.ncFile.variables[variable['variable_name']], 0)
+            elif size + 1 == sizeData:
+                self.data.appendData(variable, self.ncFile.variables[variable['variable_name']], size)
+            elif size + 1 != sizeData:
+                self.data.appendData(variable, self.ncFile.variables[variable['variable_name']], sizeData)
+
+    def deleteNcFile(self):
+        os.remove(self.ncOutput)
 
 
 if __name__ == '__main__':
-    NetCDFConverter('/Users/Loedded/Downloads/xx.json', '/Users/Loedded/Downloads/xx.dat',
-                    '/Users/Loedded/Downloads')
+    NetCDFConverter('/Users/juancarlos/Downloads/asd/xx.json', '/Users/juancarlos/Downloads/asd/test.dat',
+                    '/Users/juancarlos/Downloads/asd')

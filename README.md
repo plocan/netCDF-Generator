@@ -11,9 +11,11 @@
 
 
 ## Introduction
-
+El netCDF-converter es un software que convierte a ficheros netCDF dados un json de metadatos y un csv de datos.
 ### Prerequisites
-
+- Numpy
+- Pandas
+- Python 2.7
 ## Versioning
 
 ## Authors

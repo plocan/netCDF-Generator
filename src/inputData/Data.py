@@ -24,7 +24,7 @@ class Data(object):
         else:
             return False
 
-    def writeData(self, ncFile, variable, variableCreated, version):
+    def writeData(self, variable, variableCreated):
         if 'value' in variable and variable['value'] != "":
             variableCreated[:] = self.convert_value(variable)
         elif 'csvcolumn' in variable and variable['csvcolumn'] != "":
@@ -62,7 +62,6 @@ class Data(object):
             Log().setLogWarning(
                 'NETCDF: Not found column for: ' + variable['variable_name'] + ' standard name: ' + variable[
                     'standard_name'])
-
         setattr(variableNetCDF, '_ChunkSizes', len(variableNetCDF[:]))
 
     def convert_value(self, var):

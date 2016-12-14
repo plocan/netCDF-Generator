@@ -19,19 +19,7 @@ class NetCDFConverter(object):
         self.ncOutput = self.ncOutput + self.metadata.getGlobalAttributes().getID() + ".nc"
         self.version = self.metadata.getGlobalAttributes().getNetCDFVersion()
         self.version = self.version.replace(' ', '_')
-        if not os.path.exists(self.ncOutput):
-            self.ncFile = Dataset(self.ncOutput, 'w', format='NETCDF' + self.version)
-            self.dimensions = self.metadata.getDimensions()
-            self.globalAttributes = Metadata(metadataFile).getGlobalAttributes()
-            self.globalAttributes.writeAttributes(self.ncFile)
-            self.dimensions.writeDimensions(self.ncFile)
-            self.variables = self.metadata.getVariables()
-            self.writeVariablesData()
-        else:
-            self.ncFile = Dataset(self.ncOutput, 'r+')
-            self.writeAppendVariablesData()
-
-        """try:
+        try:
             if not os.path.exists(self.ncOutput):
                 self.ncFile = Dataset(self.ncOutput, 'w', format='NETCDF' + self.version)
                 self.dimensions = self.metadata.getDimensions()
@@ -46,7 +34,8 @@ class NetCDFConverter(object):
         except:
             Log().setLogError("FATAL ERROR")
             Log().setLogInfo('The script has closed unsatisfactorily')
-            #self.deleteNcFile()"""
+            self.deleteNcFile()
+            sys.exit(-1)
         Log().setLogInfo("[Finished] conversion to NetCDF of : " + metadataFile + "  " + csvFile + "  " + ncOutput)
 
     def writeVariablesData(self):

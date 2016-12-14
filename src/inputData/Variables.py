@@ -19,10 +19,10 @@ class Variables():
             ncVariable = ncFile.createVariable(variable['variable_name'], variable['typeof'], (variable['dim']),
                                                fill_value=float(fillVal), zlib=True, complevel=9)
         else:
-            ncVariable = ncFile.createVariable(variable['variable_name'], variable['typeof'],
-                                               fill_value=float(fillVal),
+            ncVariable = ncFile.createVariable(variable['variable_name'], variable['typeof'], fill_value=double(fillVal),
                                                zlib=True, complevel=9)
         return ncVariable
+
 
     def addAttributeToVariable(self, variable, attributes):
         for attribute in attributes:

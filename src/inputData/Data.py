@@ -40,6 +40,12 @@ class Data(object):
                 'NETCDF: Not found column for: ' + variable['variable_name'] + ' standard name: ' + variable[
                     'standard_name'])
         setattr(variableCreated, '_ChunkSizes', len(variableCreated[:]))
+        if 'valid_max' in variable and 'valid_min' in variable:
+            print variable['variable_name']
+            print numpy.amax(variableCreated)
+            setattr(variableCreated, 'valid_max', numpy.amax(variableCreated))
+            print numpy.amin(variableCreated)
+            setattr(variableCreated, 'valid_min', numpy.amin(variableCreated))
 
     def appendData(self, variable, variableNetCDF, chunkSizes):
         if 'value' in variable and variable['value'] != "":

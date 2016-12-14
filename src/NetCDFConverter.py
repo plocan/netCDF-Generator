@@ -80,5 +80,5 @@ class NetCDFConverter(object):
 
 
 if __name__ == '__main__':
-    NetCDFConverter('/Users/juancarlos/Downloads/asd/xx.json', '/Users/juancarlos/Downloads/asd/test.dat',
-                    '/Users/juancarlos/Downloads/asd')
+    NetCDFConverter('C:/Users/Ismael/Downloads/xx.json', 'C:/Users/Ismael/Downloads/xx.dat',
+                    'C:/Users/Ismael/Downloads')

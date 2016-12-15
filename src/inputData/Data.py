@@ -41,27 +41,24 @@ class Data(object):
                     'standard_name'])
         setattr(variableCreated, '_ChunkSizes', len(variableCreated[:]))
         if 'valid_max' in variable and 'valid_min' in variable:
-            print variable['variable_name']
-            print numpy.amax(variableCreated)
             setattr(variableCreated, 'valid_max', numpy.amax(variableCreated))
-            print numpy.amin(variableCreated)
             setattr(variableCreated, 'valid_min', numpy.amin(variableCreated))
 
 
 
     def appendData(self, variable, variableNetCDF):
         elementLimit = numpy.nonzero(variableNetCDF[:])
-        elementLimit = elementLimit[0][len(elementLimit) - 1]
+        elementLimit = elementLimit[0][len(elementLimit[0]) - 1]
 
         posFillValue = variable['_FillValue'] if '_FillValue' in variable and variable['_FillValue'] != "" else False
         posFillValue = numpy.where(variableNetCDF[:] == posFillValue)
         if len(posFillValue[0][:]) > 0:
-            elementLimit = posFillValue[0][len(posFillValue) - 1]
+            elementLimit = posFillValue[0][len(posFillValue[0]) - 1] - 1
 
         if 'value' in variable and variable['value'] != "":
             return 0
         elif 'csvcolumn' in variable and variable['csvcolumn'] != "":
-            dataNetCDF = pandas.DataFrame(variableNetCDF[:elementLimit+1])
+            dataNetCDF = pandas.DataFrame(variableNetCDF[:elementLimit + 1])
             dataCSV = pandas.Series(self.getDataByColumn(variable['csvcolumn']))
             variableNetCDF[:] = pandas.concat([dataNetCDF, dataCSV], ignore_index=True, axis=0).as_matrix()
         elif 'variable_name' in variable and variable['variable_name'] != "" and self.isColumnExist(

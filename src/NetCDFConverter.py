@@ -48,7 +48,7 @@ class NetCDFConverter(object):
 
         for variable in variables:
             variableCreated = self.variables.writeVariables(self.ncFile, variable, self.version)
-            self.data.writeData(self.ncFile, variable, variableCreated, self.version)
+            self.data.writeData(variable, variableCreated)
             self.variables.deleteAttributes(variablesNames, variable)
             self.variables.addAttributeToVariable(variableCreated, variable)
 
@@ -67,19 +67,9 @@ class NetCDFConverter(object):
 
     def writeAppendVariablesData(self):
         variables = self.metadataData['variables']
-        size = 0
 
         for variable in variables:
-            sizeData = len(self.ncFile.variables[variable['variable_name']][:])
-            if 'value' in variable and variable['value'] != "":
-                continue
-            elif size == 0:
-                size = len(self.ncFile.variables[variable['variable_name']][:])
-                self.data.appendData(variable, self.ncFile.variables[variable['variable_name']],0)
-            elif size + 1 == sizeData:
-                self.data.appendData(variable, self.ncFile.variables[variable['variable_name']],size)
-            elif size + 1 != sizeData:
-                self.data.appendData(variable, self.ncFile.variables[variable['variable_name']],sizeData)
+            self.data.appendData(variable, self.ncFile.variables[variable['variable_name']])
 
 
 if __name__ == '__main__':

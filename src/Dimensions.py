@@ -1,7 +1,6 @@
 import sys
 
-from src.NetCDFConverter import NetCDFConverter
-from src.inputData.Log import Log
+from Log import Log
 
 
 class Dimensions():
@@ -18,15 +17,6 @@ class Dimensions():
             Log().setLogError('Not found dimensions on .json file.')
             Log().setLogInfo('The script has closed unsatisfactorily')
             sys.exit(-1)
-
-    def getDimensionsList(self):
-        return self.dimensionsList.keys()
-
-    def getDimensionValue(self, key):
-        return self.dimensionsList[key]
-
-    def getDimensionsListIterator(self):
-        return self.dimensionsList.iteritems()
 
     def writeDimensions(self, ncFile):
         dimensions = self.metadata['dimensions']

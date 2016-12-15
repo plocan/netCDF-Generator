@@ -1,28 +1,15 @@
 import numpy as numpy
 import pandas as pandas
 
-from src.inputData.Log import Log
+from Log import Log
 
 
 class Data(object):
     def __init__(self, sourceCSV):
         self.data = pandas.read_csv(sourceCSV)
 
-    def getDataList(self):
-        return self.data
-
-    def getHeader(self):
-        return self.data.columns
-
     def getDataByColumn(self, column):
         return self.data[column]
-
-    def isColumnExist(self, column):
-        header = self.getHeader()
-        if column in header:
-            return True
-        else:
-            return False
 
     def writeData(self, variable, variableCreated):
         if 'value' in variable and variable['value'] != "":
@@ -44,12 +31,9 @@ class Data(object):
             setattr(variableCreated, 'valid_max', numpy.amax(variableCreated))
             setattr(variableCreated, 'valid_min', numpy.amin(variableCreated))
 
-
-
     def appendData(self, variable, variableNetCDF):
         elementLimit = numpy.nonzero(variableNetCDF[:])
         elementLimit = elementLimit[0][len(elementLimit[0]) - 1]
-
         posFillValue = variable['_FillValue'] if '_FillValue' in variable and variable['_FillValue'] != "" else False
         posFillValue = numpy.where(variableNetCDF[:] == posFillValue)
         if len(posFillValue[0][:]) > 0:
@@ -63,12 +47,12 @@ class Data(object):
             variableNetCDF[:] = pandas.concat([dataNetCDF, dataCSV], ignore_index=True, axis=0).as_matrix()
         elif 'variable_name' in variable and variable['variable_name'] != "" and self.isColumnExist(
                 variable['variable_name']):
-            dataNetCDF = pandas.DataFrame(variableNetCDF[:elementLimit+1])
+            dataNetCDF = pandas.DataFrame(variableNetCDF[:elementLimit + 1])
             dataCSV = pandas.Series(self.getDataByColumn(variable['variable_name']))
             variableNetCDF[:] = pandas.concat([dataNetCDF, dataCSV], ignore_index=True, axis=0).as_matrix()
         elif 'standard_name' in variable and variable['standard_name'] != "" and self.isColumnExist(
                 variable['standard_name']):
-            dataNetCDF = pandas.DataFrame(variableNetCDF[:elementLimit+1])
+            dataNetCDF = pandas.DataFrame(variableNetCDF[:elementLimit + 1])
             dataCSV = pandas.Series(self.getDataByColumn(variable['standard_name']))
             variableNetCDF[:] = pandas.concat([dataNetCDF, dataCSV], ignore_index=True, axis=0).as_matrix()
         else:
@@ -76,8 +60,6 @@ class Data(object):
                 'NETCDF: Not found column for: ' + variable['variable_name'] + ' standard name: ' + variable[
                     'standard_name'])
         setattr(variableNetCDF, '_ChunkSizes', len(variableNetCDF[:]))
-
-
 
     def convert_value(self, var):
         if var['typeof'] in ["str", "S1", "S"]:

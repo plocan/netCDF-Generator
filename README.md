@@ -58,14 +58,14 @@ the standards of**OceanSites** and **EgoGliders** for *time series*
 
 * For more information about the standard see [Data Format Reference Manual](http://www.oceansites.org/docs/oceansites_data_format_reference_manual.pdf) file.
 
-* To view the sample metadata file see [OceanSites JSON example](http://192.168.53.152/Data-Service/netCDF-convert/blob/master/osexample.json) file.
+* To view the sample metadata file see [OceanSites JSON example](http://192.168.53.152/Data-Service/netCDF-convert/blob/master/docs/egexample.json) file.
 
 #### EgoGliders Standard v1.2
 
 
 * For more information about the standard see [Data Format Reference Manual](http://archimer.ifremer.fr/doc/00239/34980/44905.pdf) file.
 
-* To view the sample metadata file see [EgoGliders JSON example](http://192.168.53.152/Data-Service/netCDF-convert/blob/master/egexample.json) file.
+* To view the sample metadata file see [EgoGliders JSON example](http://192.168.53.152/Data-Service/netCDF-convert/blob/master/docs/egexample.json) file.
 
 ## Version
 

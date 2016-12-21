@@ -1,6 +1,4 @@
-import sys
-
-from src.Log import Log
+from Log import Log
 
 
 class Variables():

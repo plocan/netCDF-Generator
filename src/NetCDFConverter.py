@@ -1,5 +1,5 @@
 import os
-import sys
+
 
 from netCDF4._netCDF4 import Dataset
 
@@ -105,8 +105,10 @@ class NetCDFConverter(object):
 
 
 if __name__ == '__main__':
-    NetCDFConverter('/Users/Loedded/Downloads/xx.json', '/Users/Loedded/Downloads/xx.dat', '/Users/Loedded/Downloads')
+    NetCDFConverter('/Users/juancarlos/Downloads/asd/xx.json', '/Users/juancarlos/Downloads/asd/test.dat',
+                    '/Users/juancarlos/Downloads/asd')
 
 """
 if __name__ == '__main__':
-    NetCDFConverter(sys.argv[1], sys.argv[2], sys.argv[3])"""
+    NetCDFConverter(sys.argv[1], sys.argv[2], sys.argv[3])
+"""

@@ -106,3 +106,7 @@ class NetCDFConverter(object):
 
 if __name__ == '__main__':
     NetCDFConverter('/Users/Loedded/Downloads/xx.json', '/Users/Loedded/Downloads/xx.dat', '/Users/Loedded/Downloads')
+
+"""
+if __name__ == '__main__':
+    NetCDFConverter(sys.argv[1], sys.argv[2], sys.argv[3])"""

@@ -19,6 +19,10 @@ class Dimensions():
             sys.exit(-1)
 
     def writeDimensions(self, ncFile):
-        dimensions = self.metadata['dimensions']
-        for dimension in dimensions:
-            ncFile.createDimension(dimension['dimension_name'], dimension['length'])
+        try:
+            dimensions = self.metadata['dimensions']
+            for dimension in dimensions:
+                ncFile.createDimension(dimension['dimension_name'], dimension['length'])
+        except:
+            Log().setLogWarning('Error writing dimensions')
+            Log().setLogInfo('The script has closed unsatisfactorily')

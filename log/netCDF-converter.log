@@ -969,3 +969,104 @@
 [12/21/2016 08:54:18 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads
 [12/21/2016 08:54:25 AM] INFO: [Begin] conversion to NetCDF of: /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads
 [12/21/2016 08:54:25 AM] INFO: [Finished] conversion to NetCDF of : /Users/Loedded/Downloads/xx.json  /Users/Loedded/Downloads/xx.dat  /Users/Loedded/Downloads
+[12/21/2016 09:56:20 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 09:56:21 AM] INFO: This file has been used
+[12/21/2016 09:58:24 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 09:58:25 AM] INFO: [Finished] conversion to NetCDF of : C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 09:59:38 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xxx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 09:59:38 AM] ERROR: Not found .json file. (Metadata file)
+[12/21/2016 09:59:38 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 10:31:52 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:31:52 AM] INFO: This file has been used
+[12/21/2016 10:33:42 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:33:43 AM] INFO: This file has been used
+[12/21/2016 10:34:15 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:34:16 AM] INFO: [Finished] conversion to NetCDF of : C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:35:40 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:35:40 AM] INFO: This file has been used
+[12/21/2016 10:35:47 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:35:47 AM] INFO: This file has been used
+[12/21/2016 10:36:20 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:36:21 AM] INFO: [Finished] conversion to NetCDF of : C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:37:40 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:37:40 AM] INFO: This file has been used
+[12/21/2016 10:38:31 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:38:32 AM] INFO: [Finished] conversion to NetCDF of : C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:40:37 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:40:38 AM] INFO: [Finished] conversion to NetCDF of : C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:42:49 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:42:50 AM] INFO: [Finished] conversion to NetCDF of : C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:47:13 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:59:56 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 10:59:56 AM] ERROR: Wrong variable type
+[12/21/2016 10:59:56 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:04:48 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 11:04:48 AM] ERROR: Wrong variable type
+[12/21/2016 11:04:48 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:05:21 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 11:05:21 AM] INFO: This file has been used
+[12/21/2016 11:05:57 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 11:05:58 AM] ERROR: Wrong variable type
+[12/21/2016 11:05:58 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:06:35 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 11:06:35 AM] ERROR: Not found .json file. (Metadata file)
+[12/21/2016 11:06:35 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:07:45 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 11:07:46 AM] INFO: [Finished] conversion to NetCDF of : C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 11:08:16 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 11:08:17 AM] ERROR: Wrong variable type
+[12/21/2016 11:08:17 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 11:27:45 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error adding attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error adding attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error adding attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error adding attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error adding attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error adding attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:45 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:45 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:46 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:46 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:46 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:46 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:46 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:46 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:46 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:46 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:46 AM] ERROR: Error deleting attribute
+[12/21/2016 11:27:46 AM] INFO: The script has closed unsatisfactorily
+[12/21/2016 11:27:46 AM] INFO: [Finished] conversion to NetCDF of : C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 11:28:42 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 11:28:43 AM] INFO: [Finished] conversion to NetCDF of : C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 11:37:55 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 11:37:56 AM] INFO: [Finished] conversion to NetCDF of : C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 11:40:24 AM] INFO: [Begin] conversion to NetCDF of: C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads
+[12/21/2016 11:40:25 AM] INFO: [Finished] conversion to NetCDF of : C:/Users/Ismael/Downloads/xx.json  C:/Users/Ismael/Downloads/xx.dat  C:/Users/Ismael/Downloads

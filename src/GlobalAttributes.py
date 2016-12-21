@@ -20,11 +20,17 @@ class GlobalAttributes():
             sys.exit(-1)
 
     def writeAttributes(self, netCDF):
-        for attribute in self.attributesList:
-            if self.attributesList[attribute]:
-                setattr(netCDF, attribute, self.attributesList[attribute])
+        try:
+            for attribute in self.attributesList:
+                if self.attributesList[attribute]:
+                    setattr(netCDF, attribute, self.attributesList[attribute])
 
-        netCDF.date_created = str(dt.now().date()) + 'T' + str(dt.now().time()) + 'Z'
+            netCDF.date_created = str(dt.now().date()) + 'T' + str(dt.now().time()) + 'Z'
+        except:
+            Log().setLogError('Error writing attributes')
+            Log().setLogInfo('The script has closed unsatisfactorily')
+            sys.exit(-1)
+
 
     def getNetCDFVersion(self):
         return self.attributesList["netcdf_version"]

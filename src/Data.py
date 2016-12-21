@@ -1,5 +1,6 @@
 import numpy as numpy
 import pandas as pandas
+import sys
 
 from Log import Log
 
@@ -12,22 +13,27 @@ class Data(object):
         return self.data[column]
 
     def writeData(self, variable, variableCreated):
-        if 'value' in variable and variable['value'] != "":
-            variableCreated[:] = self.convert_value(variable)
-        elif 'csvcolumn' in variable and variable['csvcolumn'] != "":
-            variableCreated[:] = self.getDataByColumn(variable['csvcolumn']).as_matrix()
-        elif 'variable_name' in variable and variable['variable_name'] != "":
-            variableCreated[:] = self.getDataByColumn(variable['variable_name']).as_matrix()
-        elif 'standard_name' in variable and variable['standard_name'] != "":
-            variableCreated[:] = self.getDataByColumn(variable['standard_name']).as_matrix()
-        else:
-            Log().setLogWarning(
-                'NETCDF: Not found column for: ' + variable['variable_name'] + ' standard name: ' + variable[
-                    'standard_name'])
-        setattr(variableCreated, '_ChunkSizes', len(variableCreated[:]))
-        if 'valid_max' in variable and 'valid_min' in variable:
-            setattr(variableCreated, 'valid_max', numpy.amax(variableCreated))
-            setattr(variableCreated, 'valid_min', numpy.amin(variableCreated))
+        try:
+            if 'value' in variable and variable['value'] != "":
+                variableCreated[:] = self.convert_value(variable)
+            elif 'csvcolumn' in variable and variable['csvcolumn'] != "":
+                variableCreated[:] = self.getDataByColumn(variable['csvcolumn']).as_matrix()
+            elif 'variable_name' in variable and variable['variable_name'] != "":
+                variableCreated[:] = self.getDataByColumn(variable['variable_name']).as_matrix()
+            elif 'standard_name' in variable and variable['standard_name'] != "":
+                variableCreated[:] = self.getDataByColumn(variable['standard_name']).as_matrix()
+            else:
+                Log().setLogWarning(
+                    'NETCDF: Not found column for: ' + variable['variable_name'] + ' standard name: ' + variable[
+                        'standard_name'])
+            setattr(variableCreated, '_ChunkSizes', len(variableCreated[:]))
+            if 'valid_max' in variable and 'valid_min' in variable:
+                setattr(variableCreated, 'valid_max', numpy.amax(variableCreated))
+                setattr(variableCreated, 'valid_min', numpy.amin(variableCreated))
+        except:
+            Log().setLogError('Wrong variable type')
+            Log().setLogInfo('The script has closed unsatisfactorily')
+            sys.exit(-1)
 
     def appendData(self, variable, variableNetCDF):
         elementLimit = numpy.nonzero(variableNetCDF[:])

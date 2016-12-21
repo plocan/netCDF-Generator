@@ -16,11 +16,9 @@ class Data(object):
             variableCreated[:] = self.convert_value(variable)
         elif 'csvcolumn' in variable and variable['csvcolumn'] != "":
             variableCreated[:] = self.getDataByColumn(variable['csvcolumn']).as_matrix()
-        elif 'variable_name' in variable and variable['variable_name'] != "" and self.isColumnExist(
-                variable['variable_name']):
+        elif 'variable_name' in variable and variable['variable_name'] != "":
             variableCreated[:] = self.getDataByColumn(variable['variable_name']).as_matrix()
-        elif 'standard_name' in variable and variable['standard_name'] != "" and self.isColumnExist(
-                variable['standard_name']):
+        elif 'standard_name' in variable and variable['standard_name'] != "":
             variableCreated[:] = self.getDataByColumn(variable['standard_name']).as_matrix()
         else:
             Log().setLogWarning(
@@ -45,16 +43,83 @@ class Data(object):
             dataNetCDF = pandas.DataFrame(variableNetCDF[:elementLimit + 1])
             dataCSV = pandas.Series(self.getDataByColumn(variable['csvcolumn']))
             variableNetCDF[:] = pandas.concat([dataNetCDF, dataCSV], ignore_index=True, axis=0).as_matrix()
-        elif 'variable_name' in variable and variable['variable_name'] != "" and self.isColumnExist(
-                variable['variable_name']):
+        elif 'variable_name' in variable and variable['variable_name'] != "":
             dataNetCDF = pandas.DataFrame(variableNetCDF[:elementLimit + 1])
             dataCSV = pandas.Series(self.getDataByColumn(variable['variable_name']))
             variableNetCDF[:] = pandas.concat([dataNetCDF, dataCSV], ignore_index=True, axis=0).as_matrix()
-        elif 'standard_name' in variable and variable['standard_name'] != "" and self.isColumnExist(
-                variable['standard_name']):
+        elif 'standard_name' in variable and variable['standard_name'] != "":
             dataNetCDF = pandas.DataFrame(variableNetCDF[:elementLimit + 1])
             dataCSV = pandas.Series(self.getDataByColumn(variable['standard_name']))
             variableNetCDF[:] = pandas.concat([dataNetCDF, dataCSV], ignore_index=True, axis=0).as_matrix()
+        else:
+            Log().setLogWarning(
+                'NETCDF: Not found column for: ' + variable['variable_name'] + ' standard name: ' + variable[
+                    'standard_name'])
+        setattr(variableNetCDF, '_ChunkSizes', len(variableNetCDF[:]))
+
+    def appendDataInTheMiddle(self, variable, variableNetCDF, posCut):
+        elementLimit = numpy.nonzero(variableNetCDF[:])
+        elementLimit = elementLimit[0][len(elementLimit[0]) - 1]
+        posFillValue = variable['_FillValue'] if '_FillValue' in variable and variable['_FillValue'] != "" else False
+        posFillValue = numpy.where(variableNetCDF[:] == posFillValue)
+        if len(posFillValue[0][:]) > 0:
+            elementLimit = posFillValue[0][len(posFillValue[0]) - 1] - 1
+
+        dataNetCDF = variableNetCDF[:elementLimit + 1]
+
+        firstMiddle = pandas.DataFrame(dataNetCDF[:posCut])
+        secondMiddle = pandas.DataFrame(dataNetCDF[posCut:])
+
+        if 'value' in variable and variable['value'] != "":
+            return 0
+        elif 'csvcolumn' in variable and variable['csvcolumn'] != "":
+            dataCSV = pandas.Series(self.getDataByColumn(variable['csvcolumn']))
+            concat = pandas.concat([firstMiddle, dataCSV], ignore_index=True, axis=0)
+            variableNetCDF[:] = pandas.concat([concat, secondMiddle], ignore_index=True, axis=0).as_matrix()
+
+        elif 'variable_name' in variable and variable['variable_name'] != "":
+            dataCSV = pandas.Series(self.getDataByColumn(variable['variable_name']))
+            concat = pandas.concat([firstMiddle, dataCSV], ignore_index=True, axis=0)
+            variableNetCDF[:] = pandas.concat([concat, secondMiddle], ignore_index=True, axis=0).as_matrix()
+
+        elif 'standard_name' in variable and variable['standard_name'] != "":
+            dataCSV = pandas.Series(self.getDataByColumn(variable['standard_name']))
+            concat = pandas.concat([firstMiddle, dataCSV], ignore_index=True, axis=0)
+            variableNetCDF[:] = pandas.concat([concat, secondMiddle], ignore_index=True, axis=0).as_matrix()
+        else:
+            Log().setLogWarning(
+                'NETCDF: Not found column for: ' + variable['variable_name'] + ' standard name: ' + variable[
+                    'standard_name'])
+        setattr(variableNetCDF, '_ChunkSizes', len(variableNetCDF[:]))
+
+    def appendDataToFileWithOldData(self, variable, variableNetCDF, posAppend):
+        elementLimit = numpy.nonzero(variableNetCDF[:])
+        elementLimit = elementLimit[0][len(elementLimit[0]) - 1]
+        dataNetCDF = variableNetCDF[:elementLimit + 1]
+
+        posFillValue = variable['_FillValue'] if '_FillValue' in variable and variable['_FillValue'] != "" else False
+        posFillValue = numpy.where(dataNetCDF[:] == posFillValue)
+        if len(posFillValue[0][:]) > 0:
+            elementLimit = posFillValue[0][len(posFillValue[0]) - 1] - 1
+            dataNetCDF = variableNetCDF[:elementLimit + 1]
+
+        if 'value' in variable and variable['value'] != "":
+            return 0
+        elif 'csvcolumn' in variable and variable['csvcolumn'] != "":
+            dataCSV = self.getDataByColumn(variable['csvcolumn']).as_matrix()
+            dataCSV = pandas.Series(dataCSV[posAppend:])
+            variableNetCDF[:] = pandas.concat([pandas.DataFrame(dataNetCDF), dataCSV], ignore_index=True,
+                                              axis=0).as_matrix()
+        elif 'variable_name' in variable and variable['variable_name'] != "":
+            dataCSV = self.getDataByColumn(variable['variable_name']).as_matrix()
+            dataCSV = pandas.Series(dataCSV[posAppend:])
+            variableNetCDF[:] = pandas.concat([pandas.DataFrame(dataNetCDF), dataCSV], ignore_index=True,
+                                              axis=0).as_matrix()
+        elif 'standard_name' in variable and variable['standard_name'] != "":
+            dataCSV = self.getDataByColumn(variable['standard_name']).as_matrix()
+            dataCSV = pandas.Series(dataCSV[posAppend:])
+            variableNetCDF[:] = pandas.concat([pandas.DataFrame(dataNetCDF), dataCSV], ignore_index=True,
+                                              axis=0).as_matrix()
         else:
             Log().setLogWarning(
                 'NETCDF: Not found column for: ' + variable['variable_name'] + ' standard name: ' + variable[

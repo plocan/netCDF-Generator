@@ -1,5 +1,5 @@
 ![Picture](http://empleo.plocan.eu/static/plocan.png)
-# NetCDF-converter
+# netCDF-Generator
 
 ## Table of contents
 
@@ -21,14 +21,14 @@
 
 ## Introduction
 
-**NetCDF-Converter** is a file converter to *NetCDF* developed in python and that also complies with 
+**netCDF-Generator** is a file converter to *netCDF* developed in python and that also complies with 
 the standards of**OceanSites** and **EgoGliders** for *time series*
 
 ## What does the code do?
 
-- Convert to NetCDF4.
-- Convert to NetCDF3.
-- You can add more data to a NetCDF document already created.
+- Convert to netCDF4.
+- Convert to netCDF3.
+- You can add more data to a netCDF document already created.
 
 
 ## What the code doesn't do?
@@ -58,14 +58,14 @@ the standards of**OceanSites** and **EgoGliders** for *time series*
 
 * For more information about the standard see [Data Format Reference Manual](http://www.oceansites.org/docs/oceansites_data_format_reference_manual.pdf) file.
 
-* To view the sample metadata file see [OceanSites JSON example](http://192.168.53.152/Data-Service/netCDF-convert/blob/master/docs/egexample.json) file.
+* To view the sample metadata file see [OceanSites JSON example](http://192.168.53.152/Data-Service/netCDF-Generator/blob/master/docs/egexample.json) file.
 
 #### EgoGliders Standard v1.2
 
 
 * For more information about the standard see [Data Format Reference Manual](http://archimer.ifremer.fr/doc/00239/34980/44905.pdf) file.
 
-* To view the sample metadata file see [EgoGliders JSON example](http://192.168.53.152/Data-Service/netCDF-convert/blob/master/docs/egexample.json) file.
+* To view the sample metadata file see [EgoGliders JSON example](http://192.168.53.152/Data-Service/netCDF-Generator/blob/master/docs/egexample.json) file.
 
 ## Version
 
@@ -73,14 +73,14 @@ Version 1.0
 
 ## License
 
-* see [LICENSE](http://192.168.53.152/Data-Service/netCDF-convert/blob/master/LICENSE.md) file.
+* see [LICENSE](http://192.168.53.152/Data-Service/netCDF-Generator/blob/master/LICENSE.md) file.
 
 ## Download
 
-* [Version 1.0](http://192.168.53.152/Data-Service/netCDF-convert/repository/archive.zip?ref=master)[.zip]
-* [Version 1.0](http://192.168.53.152/Data-Service/netCDF-convert/repository/archive.tar.gz?ref=master)[.tar.gz]
-* [Version 1.0](http://192.168.53.152/Data-Service/netCDF-convert/repository/archive.tar.bz2?ref=master)[.tar.bz2]
-* [Version 1.0](http://192.168.53.152/Data-Service/netCDF-convert/repository/archive.tar?ref=master)[.tar]
+* [Version 1.0](http://192.168.53.152/Data-Service/netCDF-Generator/repository/archive.zip?ref=master)[.zip]
+* [Version 1.0](http://192.168.53.152/Data-Service/netCDF-Generator/repository/archive.tar.gz?ref=master)[.tar.gz]
+* [Version 1.0](http://192.168.53.152/Data-Service/netCDF-Generator/repository/archive.tar.bz2?ref=master)[.tar.bz2]
+* [Version 1.0](http://192.168.53.152/Data-Service/netCDF-Generator/repository/archive.tar?ref=master)[.tar]
 
 
 ## How-to use this code

@@ -18,11 +18,17 @@ class NetCDFConverter(object):
         self.metadataData = self.metadata.get_metadata()
         self.data = Data(csvFile)
         self.ncOutput = self.ncOutput + self.metadata.get_global_attributes().get_id() + ".nc"
-        self.version = self.metadata.get_global_attributes().get_netcdf_version().replace(" ", "_")
+        self.version = self.metadata.get_global_attributes().get_netcdf_version()
         self.temporalAppendPosition = {}
 
         if not os.path.exists(self.ncOutput):
-            self.ncFile = Dataset(self.ncOutput, 'w', format='NETCDF' + self.version)
+            try:
+                self.ncFile = Dataset(self.ncOutput, 'w', format='NETCDF' + self.version)
+            except:
+                Log().set_log_error("The netCDF_version is wrong. Assigning the default value(netCDF4_CLASSIC) to "
+                                    "netCDF_version")
+                self.version = '4_CLASSIC'
+                self.ncFile = Dataset(self.ncOutput, 'w', format='NETCDF' + self.version)
             self.dimensions = self.metadata.get_dimensions()
             self.globalAttributes = Metadata(metadataFile).get_global_attributes()
             self.globalAttributes.write_attributes(self.ncFile)
@@ -38,7 +44,7 @@ class NetCDFConverter(object):
             self.writer.write_append_variables_data(self.metadata.get_variables())
 
         self.metadata.globalAttributes.max_min_attribute(self.ncFile)
-
+        self.ncFile.close()
         Log().set_log_info("[Finished] conversion to NetCDF of : " + metadataFile + "  " + csvFile + "  " + ncOutput)
 
     def check_source(self, metadataFile, csvFile):

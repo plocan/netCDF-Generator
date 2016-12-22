@@ -72,3 +72,15 @@ class GlobalAttributes():
             time = time[:10] + "T" + time[11:] + "Z"
             self.attributesList['time_coverage_start'] = time
             setattr(netCDF, 'time_coverage_start', self.attributesList['time_coverage_start'])
+
+        def get_netcdf_version(self):
+            self.version = self.attributesList["netcdf_version"]
+            if self.version == '3.5':
+                self.version = '3_CLASSIC'
+            elif self.version == '3.6':
+                self.version = '3_64BIT_OFFSET'
+            elif self.version == '':
+                self.version = '4_CLASSIC'
+            else:
+                self.version = self.version.upper().replace(" ", "_")
+            return self.version

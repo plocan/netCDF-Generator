@@ -6,7 +6,7 @@ from src.Sort import Sort
 
 class Data(object):
     def __init__(self, sourceCSV):
-        self.data = pandas.read_csv(sourceCSV)
+        self.data = pandas.read_csv(sourceCSV, encoding='utf-8')
         self.appendPositions = {}
 
     def get_data_by_column(self, column):

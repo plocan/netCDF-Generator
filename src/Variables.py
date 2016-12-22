@@ -1,6 +1,3 @@
-from Log import Log
-
-
 class Variables():
     def __init__(self, metadata):
         self.variablesList = {}
@@ -22,17 +19,11 @@ class Variables():
         return ncVariable
 
     def addAttributeToVariable(self, variable, attributes):
-        try:
-            for attribute in attributes:
-                if attributes[attribute]:
-                    setattr(variable, attribute, attributes[attribute])
-        except:
-            Log().setLogWarning('Error adding attribute')
+        for attribute in attributes:
+            if attributes[attribute]:
+                setattr(variable, attribute, attributes[attribute])
 
     def deleteAttributes(self, variablesName, variable):
-        try:
-            for key in variablesName:
-                if key in variable:
-                    del variable[key]
-        except:
-            Log().setLogWarning('Error deleting attribute')
+        for key in variablesName:
+            if key in variable:
+                del variable[key]

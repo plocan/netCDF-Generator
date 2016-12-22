@@ -1,28 +1,22 @@
-import sys
-
-from Log import Log
-
-
 class Dimensions():
-    def __init__(self, metadata):
-        self.dimensionsList = {}
-        self.metadata = metadata
-        self.createDimensionList()
 
-    def createDimensionList(self):
-        try:
-            for dimension in self.metadata["dimensions"]:
-                self.dimensionsList[dimension["dimension_name"]] = dimension["length"]
-        except:
-            Log().setLogError('Not found dimensions on .json file.')
-            Log().setLogInfo('The script has closed unsatisfactorily')
-            sys.exit(-1)
+    def __init__(self, metadata):
+        self.metadata = metadata
+        self.dimensions = {}
+        self.dimensionsList = []
+
+    def setDimensionsByNetCDF(self, dimensions):
+        for dimension in dimensions:
+            self.dimensions[dimension] = len(dimensions[dimension])
+            self.dimensionsList.append(dimension)
 
     def writeDimensions(self, ncFile):
-        try:
-            dimensions = self.metadata['dimensions']
-            for dimension in dimensions:
-                ncFile.createDimension(dimension['dimension_name'], dimension['length'])
-        except:
-            Log().setLogWarning('Error writing dimensions')
-            Log().setLogInfo('The script has closed unsatisfactorily')
+        dimensions = self.metadata['dimensions']
+        for dimension in dimensions:
+            ncFile.createDimension(dimension['dimension_name'], dimension['length'])
+
+    def getSizeDimensions(self, dimension):
+        return self.dimensions[dimension]
+
+    def getDimensionsList(self):
+        return self.dimensionsList

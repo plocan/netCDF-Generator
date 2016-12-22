@@ -1,11 +1,12 @@
 import os
-
+import sys
 
 from netCDF4._netCDF4 import Dataset
 
 from Data import *
 from Log import Log
 from Metadata import *
+from Writer import Writer
 
 
 class NetCDFConverter(object):
@@ -18,6 +19,7 @@ class NetCDFConverter(object):
         self.data = Data(csvFile)
         self.ncOutput = self.ncOutput + self.metadata.getGlobalAttributes().getID() + ".nc"
         self.version = self.metadata.getGlobalAttributes().getNetCDFVersion().replace(" ", "_")
+        self.temporalAppendPosition = {}
 
         if not os.path.exists(self.ncOutput):
             self.ncFile = Dataset(self.ncOutput, 'w', format='NETCDF' + self.version)
@@ -26,22 +28,18 @@ class NetCDFConverter(object):
             self.globalAttributes.writeAttributes(self.ncFile)
             self.dimensions.writeDimensions(self.ncFile)
             self.variables = self.metadata.getVariables()
-            self.writeVariablesData()
+            self.writer = Writer(self.data, self.dimensions, self.ncFile)
+            self.writer.writeVariablesData(self.metadataData['variables'], self.variables, self.version)
         else:
             self.ncFile = Dataset(self.ncOutput, 'r+')
-            self.writeAppendVariablesData()
+            self.dimensions = self.metadata.getDimensions()
+            self.dimensions.setDimensionsByNetCDF(self.ncFile.dimensions)
+            self.writer = Writer(self.data, self.dimensions, self.ncFile)
+            self.writer.writeAppendVariablesData(self.metadata.getVariables())
+
+        self.metadata.globalAttributes.max_min_attribute(self.ncFile)
 
         Log().setLogInfo("[Finished] conversion to NetCDF of : " + metadataFile + "  " + csvFile + "  " + ncOutput)
-
-    def writeVariablesData(self):
-        variables = self.metadataData['variables']
-        variablesNames = ['_FillValue', 'variable_name', 'typeof', 'dim', 'value', 'csvcolumn']
-
-        for variable in variables:
-            variableCreated = self.variables.writeVariables(self.ncFile, variable, self.version)
-            self.data.writeData(variable, variableCreated)
-            self.variables.deleteAttributes(variablesNames, variable)
-            self.variables.addAttributeToVariable(variableCreated, variable)
 
     def checkSource(self, metadataFile, csvFile):
         if not os.path.exists(metadataFile):
@@ -56,59 +54,7 @@ class NetCDFConverter(object):
         if finalCharacter != '/':
             self.ncOutput += '/'
 
-    def writeAppendVariablesData(self):
-        variables = self.metadataData['variables']
-
-        for variable in variables:
-            if 'standard_name' in variable and variable['standard_name'] == 'time':
-                posCut = self.checkPosTime(variable, self.ncFile.variables[variable['variable_name']])
-                posAppend = self.checkSameFile(variable, self.ncFile.variables[variable['variable_name']])
-            if posCut == -1 and posAppend == 0:
-                self.data.appendData(variable, self.ncFile.variables[variable['variable_name']])
-            elif posAppend > 0:
-                self.data.appendDataToFileWithOldData(variable, self.ncFile.variables[variable['variable_name']],
-                                                      posAppend)
-            else:
-                self.data.appendDataInTheMiddle(variable, self.ncFile.variables[variable['variable_name']], posCut)
-
-    def checkPosTime(self, variable, variableNC):
-        if not 'csvcolumn' in variable and variable['csvcolumn'] != 'time':
-            return -1
-        dataCSV = self.data.getDataByColumn(variable['csvcolumn'])
-        pos = numpy.where(variableNC[:][:] > dataCSV[:][0])
-        if len(pos[0][:]) != 0:
-            return pos[0][0]
-        else:
-            return -1
-
-    def checkSameFile(self, variable, variableNC):
-        if not 'csvcolumn' in variable and variable['csvcolumn'] != 'time':
-            return -1
-
-        dataCSV = self.data.getDataByColumn(variable['csvcolumn']).as_matrix()
-
-        pos = numpy.where(variableNC[:][:] == dataCSV[:][0])
-        pos2 = numpy.where(dataCSV[:][:] == variableNC[:][len(variableNC[:][:]) - 1])
-        if len(pos[0][:]) != 0 and len(pos2[0][:]) != 0:
-            if len(variableNC[:][:]) < len(dataCSV[:][:]):
-                return pos2[0][0] + 1
-            elif pos2[0][0] < len(dataCSV[:][:]) - 1:
-                return pos2[0][0] + 1
-            elif len(variableNC[:][:]) == len(dataCSV[:][:]) or len(variableNC[:][:]) > len(dataCSV[:][:]):
-                Log().setLogInfo('This file has been used')
-                sys.exit(0)
-        elif (len(pos[0][:]) > 0 and len(pos2[0][:]) != 0) or (len(pos[0][:]) != 0 and len(pos2[0][:]) > 0):
-            Log().setLogInfo('It is impossible append the information')
-            sys.exit(0)
-        else:
-            return 0
 
 
 if __name__ == '__main__':
-    NetCDFConverter('/Users/juancarlos/Downloads/asd/xx.json', '/Users/juancarlos/Downloads/asd/test.dat',
-                    '/Users/juancarlos/Downloads/asd')
-
-"""
-if __name__ == '__main__':
-    NetCDFConverter(sys.argv[1], sys.argv[2], sys.argv[3])
-"""
+    NetCDFConverter('/Users/Loedded/Downloads/xx.json', '/Users/Loedded/Downloads/xx.dat', '/Users/Loedded/Downloads')

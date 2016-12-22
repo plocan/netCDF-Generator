@@ -5,18 +5,18 @@ class Dimensions():
         self.dimensions = {}
         self.dimensionsList = []
 
-    def setDimensionsByNetCDF(self, dimensions):
+    def set_dimensions_by_netcdf(self, dimensions):
         for dimension in dimensions:
             self.dimensions[dimension] = len(dimensions[dimension])
             self.dimensionsList.append(dimension)
 
-    def writeDimensions(self, ncFile):
+    def write_dimensions(self, ncFile):
         dimensions = self.metadata['dimensions']
         for dimension in dimensions:
             ncFile.createDimension(dimension['dimension_name'], dimension['length'])
 
-    def getSizeDimensions(self, dimension):
+    def get_size_dimensions(self, dimension):
         return self.dimensions[dimension]
 
-    def getDimensionsList(self):
+    def get_dimensions_list(self):
         return self.dimensionsList

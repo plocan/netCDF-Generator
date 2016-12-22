@@ -5,7 +5,7 @@ class Sort(object):
     def __init__(self, header):
         self.header = header
 
-    def sortColumn(self, variable):
+    def sort_column(self, variable):
         if 'csvcolumn' in variable and variable['csvcolumn'] != "" and variable['csvcolumn'] in self.header:
             return 'csvcolumn'
         elif 'variable_name' in variable and variable['variable_name'] != "" and variable[
@@ -15,6 +15,6 @@ class Sort(object):
             'standard_name '] in self.header:
             return 'standard_name'
         else:
-            Log().setLogWarning(
+            Log().set_log_warning(
                 'NETCDF: Not found column for: ' + variable['variable_name'] + ' standard name: ' + variable[
                     'standard_name'])

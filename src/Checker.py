@@ -12,8 +12,8 @@ class Checker(object):
         self.appendMiddleDictionary = {}
 
     # Comprobar si es el primer o ultimo elemento, testear bien. (Para perfiles)
-    def checkPosTime(self, dimensions, variables, ncFile):
-        sort = Sort(self.data.getHeader())
+    def check_pos_time(self, dimensions, variables, ncFile):
+        sort = Sort(self.data.get_header())
         variablesList = variables.variablesList
         for dimension in dimensions:
             if not dimension in variablesList or 'value' in variablesList[dimension] and variablesList[dimension][
@@ -21,7 +21,7 @@ class Checker(object):
                 self.appendMiddleDictionary[dimension] = -1
                 continue
             variableNC = ncFile.variables[dimension]
-            dataCSV = self.data.getDataByColumn(variablesList[dimension][sort.sortColumn(variablesList[dimension])])
+            dataCSV = self.data.get_data_by_column(variablesList[dimension][sort.sort_column(variablesList[dimension])])
             positionFirstElementBigger = numpy.where(variableNC[:][:] > dataCSV[:][0])
             positionFirstElement = numpy.where(variableNC[:][:] == dataCSV[:][0])
             if len(positionFirstElementBigger[0][:]) != 0 and len(positionFirstElement[0][:]) == 0:
@@ -30,8 +30,8 @@ class Checker(object):
                 self.appendMiddleDictionary[dimension] = 0
             self.appendDictionary[dimension] = 0
 
-    def checkSameFile(self, dimensions, variables, ncFile):
-        sort = Sort(self.data.getHeader())
+    def check_same_file(self, dimensions, variables, ncFile):
+        sort = Sort(self.data.get_header())
         variablesList = variables.variablesList
         for dimension in dimensions:
             if not dimension in variablesList or 'value' in variablesList[dimension] and variablesList[dimension][
@@ -39,7 +39,7 @@ class Checker(object):
                 self.appendDictionary[dimension] = -1
                 continue
             variableNC = ncFile.variables[dimension]
-            dataCSV = self.data.getDataByColumn(variablesList[dimension][sort.sortColumn(variablesList[dimension])])
+            dataCSV = self.data.get_data_by_column(variablesList[dimension][sort.sort_column(variablesList[dimension])])
             firstElementCSV = numpy.where(variableNC[:][:] == dataCSV[:][0])
             lastElementNC = numpy.where(dataCSV[:][:] == variableNC[:][len(variableNC[:][:]) - 1])
             if len(firstElementCSV[0][:]) != 0 and len(lastElementNC[0][:]) != 0:
@@ -52,22 +52,22 @@ class Checker(object):
                                                            0] + 1  # Comprobar si tengo que coger el ultimo del vector.
                     continue
                 elif len(variableNC[:][:]) == len(dataCSV[:][:]) or len(variableNC[:][:]) > len(dataCSV[:][:]):
-                    Log().setLogInfo('This file has been used')
+                    Log().set_log_info('This file has been used')
                     sys.exit(0)
             elif (len(firstElementCSV[0][:]) > 0 and len(lastElementNC[0][:]) == 0) or (
                             len(firstElementCSV[0][:]) == 0 and len(lastElementNC[0][:]) > 0):
-                Log().setLogInfo('It is impossible append the information')
+                Log().set_log_info('It is impossible append the information')
                 sys.exit(0)
             self.appendDictionary[dimension] = 0
 
-    def getAppendDictionary(self):
+    def get_append_dictionary(self):
         return self.appendDictionary
 
-    def getAppendMiddleDictionary(self):
+    def get_append_middle_dictionary(self):
         return self.appendMiddleDictionary
 
-    def getAppendDictionaryElement(self, dimension):
+    def get_append_dictionary_element(self, dimension):
         return self.appendDictionary[dimension]
 
-    def getAppendMiddleDictionaryElement(self, dimension):
+    def get_append_middle_dictionary_element(self, dimension):
         return self.appendMiddleDictionary[dimension]

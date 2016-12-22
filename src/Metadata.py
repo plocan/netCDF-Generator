@@ -14,14 +14,14 @@ class Metadata(object):
         self.variables = Variables(self.data)
         data_file.close()
 
-    def getGlobalAttributes(self):
+    def get_global_attributes(self):
         return self.globalAttributes
 
-    def getDimensions(self):
+    def get_dimensions(self):
         return self.dimensions
 
-    def getVariables(self):
+    def get_variables(self):
         return self.variables
 
-    def getMetadata(self):
+    def get_metadata(self):
         return self.data

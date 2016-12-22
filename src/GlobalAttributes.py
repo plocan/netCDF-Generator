@@ -11,28 +11,28 @@ class GlobalAttributes():
     def __init__(self, data):
         self.data = data
         self.attributesList = {}
-        self.createAttributeList()
+        self.create_attribute_list()
 
-    def createAttributeList(self):
+    def create_attribute_list(self):
         try:
             for key, value in self.data["global_attributes"].items():
                 self.attributesList[key] = value
         except:
-            Log().setLogError('Not found global_attributes on .json file.')
-            Log().setLogInfo('The script has closed unsatisfactorily')
+            Log().set_log_error('Not found global_attributes on .json file.')
+            Log().set_log_info('The script has closed unsatisfactorily')
             sys.exit(-1)
 
-    def writeAttributes(self, netCDF):
+    def write_attributes(self, netCDF):
         for attribute in self.attributesList:
             if self.attributesList[attribute]:
                 setattr(netCDF, attribute, self.attributesList[attribute])
 
         netCDF.date_created = str(dt.now().date()) + 'T' + str(dt.now().time()) + 'Z'
 
-    def getNetCDFVersion(self):
+    def get_netcdf_version(self):
         return self.attributesList["netcdf_version"]
 
-    def getID(self):
+    def get_id(self):
         return self.attributesList["id"]
 
     def max_min_attribute(self, netCDF):

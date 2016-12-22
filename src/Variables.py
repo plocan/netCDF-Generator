@@ -4,10 +4,10 @@ class Variables():
         for variable in metadata["variables"]:
             self.variablesList[variable["variable_name"]] = variable
 
-    def writeVariables(self, ncFile, variable, version):
-        return self.createVariablesForNetCDF(ncFile, variable)
+    def write_variables(self, ncFile, variable, version):
+        return self.create_variables_for_netCDF(ncFile, variable)
 
-    def createVariablesForNetCDF(self, ncFile, variable):
+    def create_variables_for_netCDF(self, ncFile, variable):
         fillVal = variable['_FillValue'] if '_FillValue' in variable and variable['_FillValue'] != "" else False
         if 'dim' in variable and variable['dim'] != "":
             ncVariable = ncFile.createVariable(variable['variable_name'], variable['typeof'], (variable['dim']),
@@ -18,12 +18,12 @@ class Variables():
                                                zlib=True, complevel=9)
         return ncVariable
 
-    def addAttributeToVariable(self, variable, attributes):
+    def add_attribute_to_variable(self, variable, attributes):
         for attribute in attributes:
             if attributes[attribute]:
                 setattr(variable, attribute, attributes[attribute])
 
-    def deleteAttributes(self, variablesName, variable):
+    def delete_attributes(self, variablesName, variable):
         for key in variablesName:
             if key in variable:
                 del variable[key]

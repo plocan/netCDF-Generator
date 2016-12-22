@@ -6,17 +6,17 @@ class Log(object):
         logging.basicConfig(filename='../log/netCDF-converter.log', level=logging.INFO,
                             format='[%(asctime)s] %(levelname)s: %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
-    def setLogInfo(self, message):
+    def set_log_info(self, message):
         logging.info(message)
 
-    def setLogWarning(self, message):
+    def set_log_warning(self, message):
         logging.warning(message)
 
-    def setLogError(self, message):
+    def set_log_error(self, message):
         logging.error(message)
 
-    def setLogException(self, message):
+    def set_log_exception(self, message):
         logging.exception(message)
 
-    def setLogDebug(self, message):
+    def set_log_dSebug(self, message):
         logging.debug(message)

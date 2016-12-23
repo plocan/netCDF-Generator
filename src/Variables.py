@@ -12,7 +12,6 @@ class Variables():
 
     def create_variables_for_netCDF(self, ncFile, variable):
         fillVal = variable['_FillValue'] if '_FillValue' in variable and variable['_FillValue'] != "" else False
-
         dimension = Checker().check_dimensions(variable)
         if dimension != "":
             ncVariable = ncFile.createVariable(variable['variable_name'], variable['typeof'], (variable[dimension]),

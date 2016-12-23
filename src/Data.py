@@ -21,7 +21,6 @@ class Data(object):
         else:
             column = Sort(self.data.columns).sort_column(variable)
             variableCreated[:] = self.get_data_by_column(variable[column]).as_matrix()
-
         setattr(variableCreated, '_ChunkSizes', len(variableCreated[:]))
         if 'valid_max' in variable and 'valid_min' in variable:
             setattr(variableCreated, 'valid_max', numpy.amax(variableCreated))

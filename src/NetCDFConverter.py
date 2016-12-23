@@ -22,18 +22,12 @@ class NetCDFConverter(object):
                                     "netCDF_version")
                 self.version = '4_CLASSIC'
                 self.ncFile = Dataset(self.ncOutput, 'w', format='NETCDF' + self.version)
+            self.create_netcdf()
 
-            self.globalAttributes = Metadata(metadataFile).get_global_attributes()
-            self.globalAttributes.write_attributes(self.ncFile)
-            self.dimensions.write_dimensions(self.ncFile)
-            self.variables = self.metadata.get_variables()
-            self.writer = Writer(self.data, self.dimensions, self.ncFile)
-            self.writer.write_variables_data(self.metadataData['variables'], self.variables, self.version)
         else:  # Append start
             self.ncFile = Dataset(self.ncOutput, 'r+')
-            self.dimensions.set_dimensions_by_netcdf(self.ncFile.dimensions)
-            self.writer = Writer(self.data, self.dimensions, self.ncFile)
-            self.writer.write_append_variables_data(self.metadata.get_variables())
+            self.append_netcdf()
+
 
         self.metadata.globalAttributes.max_min_attribute(self.ncFile)
         self.ncFile.close()
@@ -49,6 +43,20 @@ class NetCDFConverter(object):
         self.version = self.metadata.get_global_attributes().get_netcdf_version()
         self.temporalAppendPosition = {}
         self.dimensions = self.metadata.get_dimensions()
+        self.globalAttributes = Metadata(metadataFile).get_global_attributes()
+
+    def create_netcdf(self):
+        self.globalAttributes.write_attributes(self.ncFile)
+        self.dimensions.write_dimensions(self.ncFile)
+        self.variables = self.metadata.get_variables()
+        self.writer = Writer(self.data, self.dimensions, self.ncFile)
+        self.writer.write_variables_data(self.metadataData['variables'], self.variables, self.version)
+
+    def append_netcdf(self):
+        self.dimensions.set_dimensions_by_netcdf(self.ncFile.dimensions)
+        self.writer = Writer(self.data, self.dimensions, self.ncFile)
+        self.writer.write_append_variables_data(self.metadata.get_variables())
+
 
 if __name__ == '__main__':
     NetCDFConverter('/Users/Loedded/Downloads/xx.json', '/Users/Loedded/Downloads/xx.dat', '/Users/Loedded/Downloads')

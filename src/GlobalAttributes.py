@@ -1,5 +1,4 @@
 import sys
-from datetime import datetime as dt
 
 import numpy
 from netCDF4._netCDF4 import num2date
@@ -27,8 +26,6 @@ class GlobalAttributes():
             if self.attributesList[attribute]:
                 setattr(netCDF, attribute, self.attributesList[attribute])
 
-        netCDF.date_created = str(dt.now().date()) + 'T' + str(dt.now().time()) + 'Z'
-
     def get_id(self):
         return self.attributesList["id"]
 
@@ -41,10 +38,10 @@ class GlobalAttributes():
         units = str(netCDF.variables['TIME'].units)
         if units.find("days") > -1:
             time_units = 'days since 1950-01-01T 00:00:00.0Z'
-            self.set_time_global_attribute(netCDF, 'time_coverage_end', 'time_coverage_min', 'TIME', time_units)
+            self.set_time_global_attribute(netCDF, 'time_coverage_end', 'time_coverage_start', 'TIME', time_units)
         elif units.find("seconds") > -1:
             time_units = 'seconds since 1970-01-01T00:00:00.0Z'
-            self.set_time_global_attribute(netCDF, 'time_coverage_end', 'time_coverage_min', 'TIME', time_units)
+            self.set_time_global_attribute(netCDF, 'time_coverage_end', 'time_coverage_start', 'TIME', time_units)
 
     def set_global_attribute(self, netCDF, keymax, keymin, value):
         self.attributesList[keymax] = numpy.amax(netCDF.variables[value][:])

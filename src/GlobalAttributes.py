@@ -22,9 +22,15 @@ class GlobalAttributes():
             sys.exit(-1)
 
     def write_attributes(self, netCDF):
-        for attribute in self.attributesList:
-            if self.attributesList[attribute]:
-                setattr(netCDF, attribute, self.attributesList[attribute])
+        try:
+            for attribute in self.attributesList:
+                if self.attributesList[attribute]:
+                    setattr(netCDF, attribute, self.attributesList[attribute])
+            netCDF.date_created = str(dt.now().date()) + 'T' + str(dt.now().time()) + 'Z'
+        except:
+            Log().set_log_error('Error writing attributes')
+            Log().set_log_info('The script has closed unsatisfactorily')
+            sys.exit(-1)
 
     def get_id(self):
         return self.attributesList["id"]

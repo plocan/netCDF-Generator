@@ -1,5 +1,5 @@
 ![Picture](http://empleo.plocan.eu/static/plocan.png)
-# netCDF-Generator
+# NetCDF-Generator
 
 ## Table of contents
 
@@ -21,22 +21,39 @@
 
 ## Introduction
 
-**netCDF-Generator** is a file converter to *netCDF* developed in python and that also complies with 
-the standards of**OceanSites** and **EgoGliders** for *time series*
+The **netCDF-Generator** is a software developed in python that generates netCDF documents 
+complying the **OceanSites** standard and the **EgoGliders** standard for *time series*. 
 
 ## What does the code do?
 
-- Convert to netCDF4.
-- Convert to netCDF3.
-- You can add more data to a netCDF document already created.
-
+- Convert to netCDF4 and netCDF4_CLASSIC.
+- Convert to netCDF3 and his variants.
+- You can add new data to a netCDF document already created considering the following cases:
+    - If you have a new CSV file with new ordered by time data.
+    - If you have a new CSV file with new messy by time data.
+    - If you have the same CSV file with more data than before.
+- You can put the netCDF version in JSON as a number considering the following cases:
+    - If you put 3.5, the version will be netCDF3_CLASSIC.
+    - If you put 3.6 and, the version will be netCDF3_64BIT_OFFSET.
+    - If you put 4 or if you don't put any value, the version would be netCDF4_CLASSIC.
+- You can put the netCDF version in JSON as a string considering these cases:
+    - You can put the string in lowercase as in the following example 3_classic.
+    - You can put spaces as in the following example 3 64BIT OFFSET.
+    - You should write the correct name as in the following example 3_CLASSIC.
 
 ## What the code doesn't do?
-
+- The JSON file and the CSV file must be in utf-8 and shouldn't have any character 
+outside English alphabet. For example: º, ò, í, etc.
+- If you put a different name than standard names you will have to use that name 
+in the JSON DataColumn attribute of the variable.
 
 
 ## What could the code do in the future?
-
+- The software could get the data from a database.
+- The software could generate a future version of netCDF.
+- The software could comply new versions of the actual standards or others.
+- The software could have an user interface for your personal use.
+- The software could read profiles and grid data.
 
 
 ## Prerequisites

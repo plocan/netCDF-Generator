@@ -23,11 +23,17 @@ class Variables():
         return ncVariable
 
     def add_attribute_to_variable(self, variable, attributes):
-        for attribute in attributes:
-            if attributes[attribute]:
-                setattr(variable, attribute, attributes[attribute])
+        try:
+            for attribute in attributes:
+                if attributes[attribute]:
+                    setattr(variable, attribute, attributes[attribute])
+        except:
+            Log().set_log_warning('Error adding attribute')
 
     def delete_attributes(self, variablesName, variable):
-        for key in variablesName:
-            if key in variable:
-                del variable[key]
+        try:
+            for key in variablesName:
+                if key in variable:
+                    del variable[key]
+        except:
+            Log().set_log_warning('Error deleting attribute')

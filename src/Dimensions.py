@@ -6,14 +6,23 @@ class Dimensions():
         self.dimensionsList = []
 
     def set_dimensions_by_netcdf(self, dimensions):
-        for dimension in dimensions:
-            self.dimensions[dimension] = len(dimensions[dimension])
-            self.dimensionsList.append(dimension)
+        try:
+            for dimension in dimensions:
+                self.dimensions[dimension] = len(dimensions[dimension])
+                self.dimensionsList.append(dimension)
+        except:
+            Log().set_log_error('Not found dimensions on .json file.')
+            Log().set_log_info('The script has closed unsatisfactorily')
+            sys.exit(-1)
 
     def write_dimensions(self, ncFile):
-        dimensions = self.metadata['dimensions']
-        for dimension in dimensions:
-            ncFile.createDimension(dimension['dimension_name'], dimension['length'])
+        try:
+            dimensions = self.metadata['dimensions']
+            for dimension in dimensions:
+                ncFile.createDimension(dimension['dimension_name'], dimension['length'])
+        except:
+            Log().set_log_warning('Error writing dimensions')
+            Log().set_log_info('The script has closed unsatisfactorily')
 
     def get_size_dimensions(self, dimension):
         return self.dimensions[dimension]

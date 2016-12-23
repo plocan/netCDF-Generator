@@ -44,20 +44,27 @@ class GlobalAttributes():
             self.set_time_global_attribute(netCDF, 'time_coverage_end', 'time_coverage_start', 'TIME', time_units)
 
     def set_global_attribute(self, netCDF, keymax, keymin, value):
-        self.attributesList[keymax] = numpy.amax(netCDF.variables[value][:])
-        setattr(netCDF, keymax, self.attributesList[keymax])
-        self.attributesList[keymin] = numpy.amin(netCDF.variables[value][:])
-        setattr(netCDF, keymin, self.attributesList[keymin])
+        try:
+            self.attributesList[keymax] = numpy.amax(netCDF.variables[value][:])
+            setattr(netCDF, keymax, self.attributesList[keymax])
+            self.attributesList[keymin] = numpy.amin(netCDF.variables[value][:])
+            setattr(netCDF, keymin, self.attributesList[keymin])
+        except:
+            Log().set_log_warning('Error creating global attribute')
+
 
     def set_time_global_attribute(self, netCDF, keymax, keymin, value, format):
-        time = str(num2date(numpy.amax(netCDF.variables[value][:]), units=format))
-        time = time[:10] + "T" + time[11:] + "Z"
-        self.attributesList[keymax] = time
-        setattr(netCDF, keymax, self.attributesList[keymax])
-        time = str(num2date(numpy.amin(netCDF.variables[value][:]), units=format))
-        time = time[:10] + "T" + time[11:] + "Z"
-        self.attributesList[keymin] = time
-        setattr(netCDF, keymin, self.attributesList[keymin])
+        try:
+            time = str(num2date(numpy.amax(netCDF.variables[value][:]), units=format))
+            time = time[:10] + "T" + time[11:] + "Z"
+            self.attributesList[keymax] = time
+            setattr(netCDF, keymax, self.attributesList[keymax])
+            time = str(num2date(numpy.amin(netCDF.variables[value][:]), units=format))
+            time = time[:10] + "T" + time[11:] + "Z"
+            self.attributesList[keymin] = time
+            setattr(netCDF, keymin, self.attributesList[keymin])
+        except:
+            Log().set_log_warning('Error creating global attribute')
 
     def get_netcdf_version(self):
         self.version = self.attributesList["netcdf_version"]

@@ -1,3 +1,6 @@
+from Checker import Checker
+
+
 class Variables():
     def __init__(self, metadata):
         self.variablesList = {}
@@ -9,8 +12,10 @@ class Variables():
 
     def create_variables_for_netCDF(self, ncFile, variable):
         fillVal = variable['_FillValue'] if '_FillValue' in variable and variable['_FillValue'] != "" else False
-        if 'dim' in variable and variable['dim'] != "":
-            ncVariable = ncFile.createVariable(variable['variable_name'], variable['typeof'], (variable['dim']),
+
+        dimension = Checker().check_dimensions(variable)
+        if dimension != "":
+            ncVariable = ncFile.createVariable(variable['variable_name'], variable['typeof'], (variable[dimension]),
                                                fill_value=float(fillVal), zlib=True, complevel=9)
         else:
             ncVariable = ncFile.createVariable(variable['variable_name'], variable['typeof'],

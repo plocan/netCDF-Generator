@@ -8,6 +8,8 @@ class Sort(object):
     def sort_column(self, variable):
         if 'csvcolumn' in variable and variable['csvcolumn'] != "" and variable['csvcolumn'] in self.header:
             return 'csvcolumn'
+        elif 'datacolumn' in variable and variable['datacolumn'] != "" and variable['datacolumn'] in self.header:
+            return 'datacolumn'
         elif 'variable_name' in variable and variable['variable_name'] != "" and variable[
             'variable_name'] in self.header:
             return 'variable_name'

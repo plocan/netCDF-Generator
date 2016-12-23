@@ -120,7 +120,7 @@ $ python NetCDFConverter.py /Users/user/Documents/example.json /Users/user/Docum
 ## Contact
 #### PLOCAN (Plataforma Oceánica de Canarias)
 * Homepage: http://plocan.eu/index.php/es/
-* e-mail: 
+* e-mail: areatic@plocan.eu
 
 
 

@@ -16,22 +16,27 @@ class Checker(object):
 
     # Check if it is the first or last item, test well. (For Profiles)
     def check_pos_time(self, dimensions, variables, ncFile):
-        sort = Sort(self.data.get_header())
-        variablesList = variables.variablesList
-        for dimension in dimensions:
-            if not dimension in variablesList or 'value' in variablesList[dimension] and variablesList[dimension][
-                'value'] != "":
-                self.appendMiddleDictionary[dimension] = -1
-                continue
-            variableNC = ncFile.variables[dimension]
-            dataCSV = self.data.get_data_by_column(variablesList[dimension][sort.sort_column(variablesList[dimension])])
-            positionFirstElementBigger = numpy.where(variableNC[:][:] > dataCSV[:][0])
-            positionFirstElement = numpy.where(variableNC[:][:] == dataCSV[:][0])
-            if len(positionFirstElementBigger[0][:]) != 0 and len(positionFirstElement[0][:]) == 0:
-                self.appendMiddleDictionary[dimension] = positionFirstElementBigger[0][0]
-            else:
-                self.appendMiddleDictionary[dimension] = 0
-            self.appendDictionary[dimension] = 0
+        try:
+            sort = Sort(self.data.get_header())
+            variablesList = variables.variablesList
+            for dimension in dimensions:
+                if not dimension in variablesList or 'value' in variablesList[dimension] and variablesList[dimension][
+                    'value'] != "":
+                    self.appendMiddleDictionary[dimension] = -1
+                    continue
+                variableNC = ncFile.variables[dimension]
+                dataCSV = self.data.get_data_by_column(variablesList[dimension][sort.sort_column(variablesList[dimension])])
+                positionFirstElementBigger = numpy.where(variableNC[:][:] > dataCSV[:][0])
+                positionFirstElement = numpy.where(variableNC[:][:] == dataCSV[:][0])
+                if len(positionFirstElementBigger[0][:]) != 0 and len(positionFirstElement[0][:]) == 0:
+                    self.appendMiddleDictionary[dimension] = positionFirstElementBigger[0][0]
+                else:
+                    self.appendMiddleDictionary[dimension] = 0
+                self.appendDictionary[dimension] = 0
+        except:
+            Log().set_log_error('Error dimensions not found')
+            Log().set_log_info('The script has closed unsatisfactorily')
+            sys.exit(-1)
 
     def check_same_file(self, dimensions, variables, ncFile):
         sort = Sort(self.data.get_header())

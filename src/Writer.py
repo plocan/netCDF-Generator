@@ -9,7 +9,6 @@ class Writer(object):
 
     def write_variables_data(self, variables, variablesList, version):
         variablesNames = ['_FillValue', 'variable_name', 'typeof', 'dim', 'value', 'csvcolumn']
-
         for variable in variables:
             dimension = Checker().check_dimensions(variable)
             if dimension != "":
@@ -21,7 +20,7 @@ class Writer(object):
 
     def write_append_variables_data(self, variables):
         checker = Checker(self.data)
-        checker.check_pos_time(self.dimensions.dimensionsList, variables, self.ncFile)
+        checker.check_position_time(self.dimensions.dimensionsList, variables, self.ncFile)
         checker.check_same_file(self.dimensions.dimensionsList, variables, self.ncFile)
         variables = variables.variablesList
         for variable in variables:

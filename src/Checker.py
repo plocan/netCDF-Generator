@@ -15,7 +15,7 @@ class Checker(object):
         self.appendMiddleDictionary = {}
 
     # Check if it is the first or last item, test well. (For Profiles)
-    def check_pos_time(self, dimensions, variables, ncFile):
+    def check_position_time(self, dimensions, variables, ncFile):
         try:
             sort = Sort(self.data.get_header())
             variablesList = variables.variablesList

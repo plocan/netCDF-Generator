@@ -56,6 +56,9 @@ class NetCDFConverter(object):
         self.dimensions.set_dimensions_by_netcdf(self.ncFile.dimensions)
         self.writer = Writer(self.data, self.dimensions, self.ncFile)
         self.writer.write_append_variables_data(self.metadata.get_variables())
-
+"""
 if __name__ == '__main__':
     NetCDFConverter(sys.argv[1], sys.argv[2], sys.argv[3])
+"""
+if __name__ == '__main__':
+    NetCDFConverter("/Users/juancarlos/Downloads/asd/xx.json","/Users/juancarlos/Downloads/asd/test.dat","/Users/juancarlos/Downloads/asd")

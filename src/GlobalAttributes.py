@@ -2,7 +2,7 @@ import sys
 
 import numpy
 from netCDF4._netCDF4 import num2date
-
+from datetime import datetime as datetime
 from Log import Log
 
 
@@ -26,7 +26,7 @@ class GlobalAttributes():
             for attribute in self.attributesList:
                 if self.attributesList[attribute]:
                     setattr(netCDF, attribute, self.attributesList[attribute])
-            netCDF.date_created = str(dt.now().date()) + 'T' + str(dt.now().time()) + 'Z'
+            netCDF.date_created = str(datetime.now().date()) + 'T' + str(datetime.now().time()) + 'Z'
         except:
             Log().set_log_error('Error writing attributes')
             Log().set_log_info('The script has closed unsatisfactorily')

@@ -4,7 +4,7 @@ import logging
 class Log(object):
     def __init__(self):
         logging.basicConfig(filename='../log/netCDF-converter.log', level=logging.INFO,
-                            format='[%(asctime)s] %(levelname)s: %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+                            format='[%(asctime)s] %(levelname)s: %(message)s', datefmt='%Y/%m/%d %S:%I:%M %p')
 
     def set_log_info(self, message):
         logging.info(message)

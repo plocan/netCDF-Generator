@@ -23,9 +23,6 @@ class Data(object):
                 column = Sort(self.data.columns).sort_column(variable)
                 variableCreated[:] = self.get_data_by_column(variable[column]).as_matrix()
             setattr(variableCreated, '_ChunkSizes', len(variableCreated[:]))
-            if 'valid_max' in variable and 'valid_min' in variable:
-                setattr(variableCreated, 'valid_max', numpy.amax(variableCreated))
-                setattr(variableCreated, 'valid_min', numpy.amin(variableCreated))
         except:
             Log().set_log_error('Error writing data')
             Log().set_log_info('The script has closed unsatisfactorily')
@@ -71,12 +68,9 @@ class Data(object):
                 return 0
             elementLimit = dimensions.get_size_dimensions(variableNetCDF.dimensions[0]) - 1
             dataNetCDF = variableNetCDF[:elementLimit + 1]
-
             column = Sort(self.data.columns).sort_column(variable)
-
             if 'value' in variable and variable['value'] != "":
                 return 0
-
             dataCSV = self.get_data_by_column(variable[column]).as_matrix()
             dataCSV = pandas.Series(dataCSV[posAppend:])
             variableNetCDF[:] = pandas.concat([pandas.DataFrame(dataNetCDF), dataCSV], ignore_index=True,

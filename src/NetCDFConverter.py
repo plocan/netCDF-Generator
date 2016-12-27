@@ -13,7 +13,7 @@ from Reader_dictionary import Reader_dictionary
 class NetCDFConverter(object):
     def __init__(self, metadataFile, csvFile, ncOutput):
         Log().set_log_info("[Begin] conversion to NetCDF of: " + metadataFile + "  " + csvFile + "  " + ncOutput)
-        self.dimensions_dictionary = Reader_dictionary().get_dimensions_dictionary()
+        self.init_elements(metadataFile, csvFile, ncOutput)
         if not os.path.exists(self.ncOutput):
             try:
                 self.ncFile = Dataset(self.ncOutput, 'w', format='NETCDF' + self.version)
@@ -57,11 +57,5 @@ class NetCDFConverter(object):
         self.writer = Writer(self.data, self.dimensions, self.ncFile)
         self.writer.write_append_variables_data(self.metadata.get_variables())
 
-
-if __name__ == '__main__':
-    NetCDFConverter('/Users/Loedded/Downloads/YY.json', '/Users/Loedded/Downloads/YY.dat', '/Users/Loedded/Downloads')
-
-"""
 if __name__ == '__main__':
     NetCDFConverter(sys.argv[1], sys.argv[2], sys.argv[3])
-"""

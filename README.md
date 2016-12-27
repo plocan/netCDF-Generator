@@ -75,7 +75,7 @@ in the JSON DataColumn attribute of the variable.
 
 * For more information about the standard see [Data Format Reference Manual](http://www.oceansites.org/docs/oceansites_data_format_reference_manual.pdf) file.
 
-* To view the sample metadata file see [OceanSites JSON example](http://192.168.53.152/Data-Service/netCDF-Generator/blob/master/docs/egexample.json) file.
+* To view the sample metadata file see [OceanSites JSON example](http://192.168.53.152/Data-Service/netCDF-Generator/blob/master/docs/osexample.json) file.
 
 #### EgoGliders Standard v1.2
 

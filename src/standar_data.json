@@ -66,258 +66,327 @@
   "glider_characteristics" : [
     {
       "variable_name" : "TRANS_SYSTEM",
+      "ego_variable_name" : "TRANS_SYSTEM",
+      "dim" : ["N_TRANS_SYSTEM", "STRING16"],
+      "typeof" : "char",
       "long_name" : "Telecommunication system used",
-      "dim" : "N_TRANS_SYSTEM, STRING16",
       "_FillValue" : " "
     },
     {
-      "variable_name": "TRANS_SYSTEM",
-      "long_name": "Program identifier used by the transmission system",
-      "dim" : "N_TRANS_SYSTEM, STRING32",
-      "_FillValue": " "
+      "variable_name" : "TRANS_SYSTEM_ID",
+      "ego_variable_name" : "TRANS_SYSTEM_ID",
+      "dim" : ["N_TRANS_SYSTEM", "STRING32"],
+      "typeof" : "char",
+      "long_name" : "Program identifier used by the transmission system",
+      "_FillValue" : " "
     },
     {
       "variable_name": "TRANS_FREQUENCY",
-      "long_name": "Frequency of transmission from the glider",
-      "dim" : "N_TRANS_SYSTEM, STRING16",
+      "ego_variable_name" : "TRANS_FREQUENCY",
+      "dim" : ["N_TRANS_SYSTEM", "STRING16"],
+      "typeof" : "char",
+      "long_name" : "Frequency of transmission from the glider",
       "units" : "hertz",
-      "_FillValue": " "
+      "_FillValue" : " "
     },
     {
       "variable_name": "POSITIONING_SYSTEM",
-      "long_name": "Positioning system",
-      "dim" : "N_TRANS_SYSTEM, STRING8",
-      "_FillValue": " "
+      "ego_variable_name" : "POSITIONING_SYSTEM",
+      "dim" : ["N_POSITIONING_SYSTEM", "STRING8"],
+      "typeof" : "char",
+      "long_name" : "Positioning system",
+      "_FillValue" : " "
     },
     {
       "variable_name": "PLATFORM_FAMILY",
-      "long_name": "Category of instrument",
+      "ego_variable_name" : "PLATFORM_FAMILY",
       "dim" : "STRING256",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Category of instrument",
+      "conventions" : "EGO reference table 22",
+      "_FillValue" : " "
     },
     {
       "variable_name": "PLATFORM_TYPE",
-      "long_name": "Type of glider",
+      "ego_variable_name" : "PLATFORM_TYPE",
       "dim" : "STRING32",
+      "typeof" : "char",
+      "long_name" : "Type of glider",
       "conventions" : "EGO reference table XX",
-      "_FillValue": " "
+      "_FillValue" : " "
     },
     {
       "variable_name": "PLATFORM_MAKER",
-      "long_name": "Name of the manufacturer",
+      "ego_variable_name" : "PLATFORM_MAKER",
       "dim" : "STRING256",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Name of the manufacturer",
+      "_FillValue" : " "
     },
     {
       "variable_name": "FIRMWARE_VERSION_NAVIGATION",
-      "long_name": "Firmware version of the navigation controller board",
+      "ego_variable_name" : "FIRMWARE_VERSION_NAVIGATION",
       "dim" : "STRING16",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Firmware version of the navigation controller board",
+      "_FillValue" : " "
     },
     {
       "variable_name": "FIRMWARE_VERSION_SCIENCE",
-      "long_name": "Firmware version of the scientific sensors controller board",
+      "ego_variable_name" : "FIRMWARE_VERSION_SCIENCE",
       "dim" : "STRING16",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Firmware version of the scientific sensors controller board",
+      "_FillValue" : " "
     },
     {
       "variable_name": "MANUAL_VERSION",
-      "long_name": "Manual version of the glider",
+      "ego_variable_name" : "MANUAL_VERSION",
       "dim" : "STRING16",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Manual version of the glider",
+      "_FillValue" : " "
     },
     {
       "variable_name": "GLIDER_SERIAL_NO",
-      "long_name": "Serial number of the glider",
+      "ego_variable_name" : "GLIDER_SERIAL_NO",
       "dim" : "STRING16",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Serial number of the glider",
+      "_FillValue" : " "
     },
     {
       "variable_name": "STANDARD_FORMAT_ID",
-      "long_name": "Standard format number which describes the data format type for each glider",
+      "ego_variable_name" : "STANDARD_FORMAT_ID",
       "dim" : "STRING16",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Standard format number which describes the data format type for each glider",
+      "_FillValue" : " "
     },
     {
       "variable_name": "DAC_FORMAT_ID",
-      "long_name": "Format number used by the DAC to describe the data format type for each glider",
+      "ego_variable_name" : "DAC_FORMAT_ID",
       "dim" : "STRING16",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Format number used by the DAC to describe the data format type for each glider",
+      "_FillValue" : " "
     },
     {
       "variable_name": "WMO_INST_TYPE",
-      "long_name" : "Coded instrument type",
-      "conventions" :  "EGO reference table 8",
+      "ego_variable_name" : "WMO_INST_TYPE",
       "dim" : "STRING4",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Coded instrument type",
+      "conventions" : "EGO reference table 8",
+      "_FillValue" : " "
     },
     {
       "variable_name": "PROJECT_NAME",
-      "long_name": "Program under which the glider was deployed",
+      "ego_variable_name" : "PROJECT_NAME",
       "dim" : "STRING64",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Program under which the glider was deployed",
+      "_FillValue" : " "
+
     },
     {
       "variable_name": "DATA_CENTRE",
-      "long_name" : "Data centre in charge of glider real-time processing",
-      "conventions" :  "EGO reference table 4",
+      "ego_variable_name" : "DATA_CENTRE",
       "dim" : "STRING2",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Data centre in charge of glider real-time processing",
+      "conventions" : "EGO reference table 4",
+      "_FillValue" : " "
     },
     {
       "variable_name": "PI_NAME",
-      "long_name": "Name of the Principal Investigator",
+      "ego_variable_name" : "PI_NAME",
       "dim" : "STRING64",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Name of the Principal Investigator",
+      "_FillValue" : " "
     },
     {
       "variable_name": "ANOMALY",
-      "long_name": "Describe any anomalies or problems the glider may have had",
+      "ego_variable_name" : "ANOMALY",
       "dim" : "STRING256",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Describe any anomalies or problems the glider may have had",
+      "_FillValue" : " "
     },
     {
       "variable_name": "BATTERY_TYPE",
-      "long_name": "Type of battery packs in the glider",
+      "ego_variable_name" : "BATTERY_TYPE",
       "dim" : "STRING64",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Type of battery packs in the glider",
+      "_FillValue" : " "
     },
     {
       "variable_name": "BATTERY_PACKS",
-      "long_name": "Configuration of battery packs in the glider",
+      "ego_variable_name" : "BATTERY_PACKS",
       "dim" : "STRING64",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Configuration of battery packs in the glider",
+      "_FillValue" : " "
     },
     {
       "variable_name": "SPECIAL_FEATURES",
-      "long_name": "Extra features of the glider (algorithms, compressee etc.)",
+      "ego_variable_name" : "SPECIAL_FEATURES",
       "dim" : "STRING1024",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Extra features of the glider (algorithms, compressee etc.)",
+      "_FillValue" : " "
     },
     {
       "variable_name": "GLIDER_OWNER",
-      "long_name": "Glider owner",
+      "ego_variable_name" : "GLIDER_OWNER",
       "dim" : "STRING64",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Glider owner",
+      "_FillValue" : " "
     },
     {
       "variable_name": "OPERATING_INSTITUTION",
-      "long_name": "Operating institution of the glider",
+      "ego_variable_name" : "OPERATING_INSTITUTION",
       "dim" : "STRING64",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Operating institution of the glider",
+      "_FillValue" : " "
     },
     {
       "variable_name": "CUSTOMIZATION",
-      "long_name": "Glider customization, i.e. (institutionand modifications)",
+      "ego_variable_name" : "CUSTOMIZATION",
       "dim" : "STRING1024",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Glider customization, i.e. (institutionand modifications)",
+      "_FillValue" : " "
     }
   ],
   "glider_deployment" : [
     {
-      "variable_name": "DEPLOYMENT_START_DATE",
-      "long_name": "Date (UTC) of the deployment",
-      "conventions": "YYYYMMDDHHMISS",
-      "dim": "DATE_TIME",
-      "_FillValue": " "
+      "ego_variable_name" : "DEPLOYMENT_START_DATE",
+      "dim" : "DATE_TIME",
+      "typeof" : "char",
+      "long_name" : "Date (UTC) of the deployment",
+      "conventions" : "YYYYMMDDHHMISS",
+      "_FillValue" : " "
     },
-    /* COMPROBAR EL TYPEOF Y LAS DIM*/
     {
       "variable_name": "DEPLOYMENT_START_LATITUDE",
-      "long_name": "Latitude of the glider when deployed",
-      "dim" : "N_POSITIONING_SYSTEM",
+      "ego_variable_name" : "DEPLOYMENT_START_LATITUDE",
+      "dim" : "",
       "typeof" : "double",
-      "_FillValue": 99999.0,
-      "valid_min" : -90.0,
-      "valid_max" : 90.0
+      "long_name" : "Latitude of the glider when deployed",
+      "units" : "degrees_north",
+      "_FillValue" : 99999,
+      "valid_min" : -90,
+      "valid_max" : 90
     },
     {
       "variable_name": "DEPLOYMENT_START_LONGITUDE",
-      "long_name": "Longitude of the glider when deployed",
-      "dim" : "N_POSITIONING_SYSTEM",
+      "ego_variable_name" : "DEPLOYMENT_START_LONGITUDE",
+      "dim" : "",
       "typeof" : "double",
-      "_FillValue": 99999.0,
-      "valid_min" : -180.0,
-      "valid_max" : 180.0
+      "long_name" : "Longitude of the glider when deployed",
+      "units" : "degrees_east",
+      "_FillValue" : 99999,
+      "valid_min" : -180,
+      "valid_max" : 180
     },
     {
       "variable_name": "DEPLOYMENT_START_QC",
-      "long_name": "Quality on DEPLOYMENT_START date, time and location",
-      "dim" : "N_POSITIONING_SYSTEM",
+      "ego_variable_name" : "DEPLOYMENT_START_QC",
+      "dim" : "",
       "typeof" : "byte",
+      "long_name" : "Quality on DEPLOYMENT_START date, time and location",
       "conventions" : "EGO reference table 2",
-      "_FillValue": -128B,
+      "_FillValue" : -128,
       "flag_values" : "0, 1, 2, 3, 4, 5, 8, 9",
       "flag_meanings" : "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed interpolated_value missing_value"
     },
     {
       "variable_name": "DEPLOYMENT_PLATFORM",
-      "long_name": "Identifier of the deployment platform",
+      "ego_variable_name" : "DEPLOYMENT_PLATFORM",
       "dim" : "STRING32",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Identifier of the deployment platform",
+      "_FillValue" : " "
     },
     {
       "variable_name": "DEPLOYMENT_CRUISE_ID",
-      "long_name": "Identifier of the cruise that deployed the glider",
+      "ego_variable_name" : "DEPLOYMENT_CRUISE_ID",
       "dim" : "STRING32",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Identifier of the cruise that deployed the glider",
+      "_FillValue" : " "
     },
     {
       "variable_name": "DEPLOYMENT_REFERENCE_STATION_ID",
-      "long_name": "Identifier of stations used to verify the parameter measurements",
+      "ego_variable_name" : "DEPLOYMENT_REFERENCE_STATION_ID",
       "dim" : "STRING256",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Identifier of stations used to verify the parameter measurements",
+      "_FillValue" : " "
     },
     {
       "variable_name": "DEPLOYMENT_END_DATE",
-      "long_name": "Date (UTC) of the glider recovery",
-      "conventions": "YYYYMMDDHHMISS",
-      "dim": "DATE_TIME",
-      "_FillValue": " "
+      "ego_variable_name" : "DEPLOYMENT_END_DATE",
+      "dim" : "DATE_TIME",
+      "typeof" : "char",
+      "long_name" : "Date (UTC) of the glider recovery",
+      "conventions" : "YYYYMMDDHHMISS",
+      "_FillValue" : " "
     },
-    /*dim*/
     {
       "variable_name": "DEPLOYMENT_END_LATITUDE",
+      "ego_variable_name" : "DEPLOYMENT_END_LATITUDE",
+      "dim" : "",
+      "typeof" : "double",
       "long_name" : "Latitude of the glider recovery",
       "units" : "degrees_north",
-      "dim" : "N_POSITIONING_SYSTEM",
-      "typeof" : "double",
-      "_FillValue": 99999.0,
-      "valid_min" : -90.0,
-      "valid_max" : 90.0
+      "_FillValue" : 99999,
+      "valid_min" : -90,
+      "valid_max" : 90
     },
     {
       "variable_name": "DEPLOYMENT_END_LONGITUDE",
+      "ego_variable_name" : "DEPLOYMENT_END_LONGITUDE",
+      "dim" : "",
+      "typeof" : "double",
       "long_name" : "Longitude of the glider recovery",
       "units" : "degrees_east",
-      "dim" : "N_POSITIONING_SYSTEM",
-      "typeof" : "double",
-      "_FillValue": 99999.0,
-      "valid_min" : -180.0,
-      "valid_max" : 180.0
+      "_FillValue" : 99999,
+      "valid_min" : -180,
+      "valid_max" : 180
     },
     {
       "variable_name": "DEPLOYMENT_END_QC",
-      "long_name": "Quality on DEPLOYMENT_END date, time and location",
-      "dim": "N_POSITIONING_SYSTEM",
-      "typeof": "byte",
+      "ego_variable_name" : "DEPLOYMENT_END_QC",
+      "dim" : "",
+      "typeof" : "byte",
+      "long_name" : "Quality on DEPLOYMENT_END date, time and location",
       "conventions" : "EGO reference table 2",
-      "_FillValue": -128B,
-      "flag_values": "0, 1, 2, 3, 4, 5, 8, 9",
-      "flag_meanings": "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed interpolated_value missing_value"
+      "_FillValue" : -128,
+      "flag_values" : "0, 1, 2, 3, 4, 5, 8, 9",
+      "flag_meanings" : "no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed interpolated_value missing_value"
     },
     {
       "variable_name": "DEPLOYMENT_END_STATUS",
-      "long_name": "Status of the end of mission of the glider",
-      "conventions": "R: retrieved, L: lost",
-      "dim": "DATE_TIME",
-      "_FillValue": " "
+      "ego_variable_name" : "DEPLOYMENT_END_STATUS",
+      "dim" : "",
+      "typeof" : "char",
+      "long_name" : "Status of the end of mission of the glider",
+      "conventions" : "R: retrieved, L: lost",
+      "_FillValue" : " "
     },
     {
       "variable_name": "DEPLOYMENT_OPERATOR",
-      "long_name": "Name of the person in charge of the glider deployment",
+      "ego_variable_name" : "DEPLOYMENT_OPERATOR",
       "dim" : "STRING256",
-      "_FillValue": " "
+      "typeof" : "char",
+      "long_name" : "Name of the person in charge of the glider deployment",
+      "_FillValue" : " "
     }
   ]
 }

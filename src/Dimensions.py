@@ -23,6 +23,7 @@ class Dimensions():
         except:
             Log().set_log_warning('Error writing dimensions')
             Log().set_log_info('The script has closed unsatisfactorily')
+            sys.exit(-1)
 
     def get_size_dimensions(self, dimension):
         return self.dimensions[dimension]

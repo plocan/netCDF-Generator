@@ -7,7 +7,7 @@ from Log import Log
 from Metadata import *
 from Writer import Writer
 from Checker import Checker
-from Reader_dictionary import Reader_dictionary
+from EgoReaderStandardMetadata import EgoReaderStandardMetadata
 
 
 class NetCDFConverter(object):
@@ -39,18 +39,40 @@ class NetCDFConverter(object):
         self.ncOutput = self.ncOutput + self.metadata.get_global_attributes().get_id() + ".nc"
         self.version = self.metadata.get_global_attributes().get_netcdf_version()
         self.temporalAppendPosition = {}
-        self.dimensions = self.metadata.get_dimensions()
         self.globalAttributes = Metadata(metadataFile).get_global_attributes()
-        naming_authority = self.globalAttributes.attributesList['naming_authority']
-        if naming_authority == 'EGO':
-            self.dimensions_dictionary = Reader_dictionary().get_dimensions_dictionary()
+        self.naming_authority = self.globalAttributes.attributesList['naming_authority']
+
+        if self.naming_authority == 'EGO':
+            self.ego_standard_metadata = EgoReaderStandardMetadata()
+            self.dimensions = self.ego_standard_metadata.get_dimensions()
+        else:
+            self.dimensions = self.metadata.get_dimensions()
+
+
+
 
     def create_netcdf(self):
         self.globalAttributes.write_attributes(self.ncFile)
-        self.dimensions.write_dimensions(self.ncFile)
-        self.variables = self.metadata.get_variables()
-        self.writer = Writer(self.data, self.dimensions, self.ncFile)
-        self.writer.write_variables_data(self.metadataData['variables'], self.variables, self.version)
+        if self.naming_authority == 'EGO':
+            self.dimensions.write_dimensions(self.ncFile)
+
+            self.variables = self.metadata.get_variables()
+            self.writer = Writer(self.data, self.dimensions, self.ncFile)
+            self.writer.write_variables_data(self.metadataData['variables'], self.variables, self.version)
+
+            self.variables = self.ego_standard_metadata.get_glider_characteristics_variables()
+            self.writer = Writer(self.data, self.dimensions, self.ncFile)
+            self.writer.write_variables_data(self.metadataData['variables'], self.variables, self.version)
+
+            self.variables = self.ego_standard_metadata.get_glider_deployment_variables()
+            self.writer = Writer(self.data, self.dimensions, self.ncFile)
+            self.writer.write_variables_data(self.metadataData['variables'], self.variables, self.version)
+
+        else:
+            self.dimensions.write_dimensions(self.ncFile)
+            self.variables = self.metadata.get_variables()
+            self.writer = Writer(self.data, self.dimensions, self.ncFile)
+            self.writer.write_variables_data(self.metadataData['variables'], self.variables, self.version)
 
     def append_netcdf(self):
         self.dimensions.set_dimensions_by_netcdf(self.ncFile.dimensions)
@@ -61,4 +83,4 @@ if __name__ == '__main__':
     NetCDFConverter(sys.argv[1], sys.argv[2], sys.argv[3])
 """
 if __name__ == '__main__':
-    NetCDFConverter("/Users/juancarlos/Downloads/asd/xx.json","/Users/juancarlos/Downloads/asd/test.dat","/Users/juancarlos/Downloads/asd")
+    NetCDFConverter("/Users/Loedded/Desktop/EgoGliders/EGO_nc_v1.json","/Users/Loedded/Desktop/EgoGliders/p201_ESTOC_2015_2.csv","/Users/Loedded/Downloads")

@@ -1,5 +1,5 @@
 {
-  "dimensions" : {
+  "dimensions_variables" : {
     "TRANS_SYSTEM" : "STRING16,N_TRANS_SYSTEM",
     "TRANS_SYSTEM_ID" : "STRING32,N_TRANS_SYSTEM",
     "TRANS_FREQUENCY" : "STRING16,N_TRANS_SYSTEM",
@@ -43,26 +43,63 @@
     "DERIVATION_COMMENT" : "STRING256,N_DERIVATION",
     "DERIVATION_DATE" : "N_DERIVATION,DATE_TIME"
   },
-  "dimensions_values" : {
-    "DATE_TIME" : "14",
-    "STRING1024" : "1024",
-    "STRING256" : "256",
-    "STRING512" : "512",
-    "STRING64" : "64",
-    "STRING32" : "32",
-    "STRING16" : "16",
-    "STRING8" : "8",
-    "STRING4" : "4",
-    "STRING2" : "2",
-    "N_PARAM" : "7",
-    "N_TRANS_SYSTEM" : "1",
-    "N_POSITIONING_SYSTEM" : "3",
-    "N_DERIVATION" : "7",
-    "N_HISTORY" : "3",
-    "TIME_GPS" : "4789",
-    "TIME" : "UNLIMITED",
-    "TIME_CURRENT" : "73"
-  }
+  "dimensions" : [
+    {
+      "dimension_name" : "DATE_TIME",
+      "length" : 14
+    },{
+      "dimension_name" : "STRING1024",
+      "length" : 1024
+    },{
+      "dimension_name" : "STRING256",
+      "length" : 256
+    },{
+      "dimension_name" : "STRING512",
+      "length" : 512
+    },{
+      "dimension_name" : "STRING64",
+      "length" : 64
+    },{
+      "dimension_name" : "STRING32",
+      "length" : 32
+    },{
+      "dimension_name" : "STRING16",
+      "length" : 16
+    },{
+      "dimension_name" : "STRING8",
+      "length" : 8
+    },{
+      "dimension_name" : "STRING4",
+      "length" : 4
+    },{
+      "dimension_name" : "STRING2",
+      "length" : 2
+    },{
+      "dimension_name" : "N_PARAM",
+      "length" : 7
+    },{
+      "dimension_name" : "N_TRANS_SYSTEM",
+      "length" : 1
+    },{
+      "dimension_name" : "N_POSITIONING_SYSTEM",
+      "length" : 3
+    },{
+      "dimension_name" : "N_DERIVATION",
+      "length" : 7
+    },{
+      "dimension_name" : "N_HISTORY",
+      "length" : 3
+    },{
+      "dimension_name" : "TIME_GPS",
+      "length" : 4789
+    },{
+      "dimension_name" : "TIME",
+      "length" : 0
+    },{
+      "dimension_name" : "TIME_CURRENT",
+      "length" : 73
+    }
+  ],
   "glider_characteristics" : [
     {
       "variable_name" : "TRANS_SYSTEM",
@@ -265,6 +302,7 @@
   ],
   "glider_deployment" : [
     {
+      "variable_name" : "DEPLOYMENT_START_DATE",
       "ego_variable_name" : "DEPLOYMENT_START_DATE",
       "dim" : "DATE_TIME",
       "typeof" : "char",

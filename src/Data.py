@@ -1,13 +1,31 @@
 import numpy as numpy
 import pandas as pandas
+import sys
+
+from Log import Log
+
+
 
 from src.Sort import Sort
 
 
 class Data(object):
     def __init__(self, sourceCSV):
+
         self.data = pandas.read_csv(sourceCSV, encoding='utf-8')
+        self.open_csv(sourceCSV)
         self.appendPositions = {}
+
+
+    def open_csv(self, sourceCSV):
+        self.data = pandas.read_csv(sourceCSV, encoding='utf-8')
+        if len(self.get_header()) >  1:
+            return
+        self.data = pandas.read_csv(sourceCSV, encoding='utf-8', delim_whitespace=True)
+
+
+
+
 
     def get_data_by_column(self, column):
         return self.data[column]
@@ -16,17 +34,12 @@ class Data(object):
         return self.data.columns
 
     def write_data(self, variable, variableCreated):
-        try:
-            if 'value' in variable and variable['value'] != "":
-                variableCreated[:] = self.convert_value(variable)
-            else:
-                column = Sort(self.data.columns).sort_column(variable)
-                variableCreated[:] = self.get_data_by_column(variable[column]).as_matrix()
-            setattr(variableCreated, '_ChunkSizes', len(variableCreated[:]))
-        except:
-            Log().set_log_error('Error writing data')
-            Log().set_log_info('The script has closed unsatisfactorily')
-            sys.exit(-1)
+        if 'value' in variable and variable['value'] != "":
+            variableCreated[:] = self.convert_value(variable)
+        else:
+            column = Sort(self.data.columns).sort_column(variable)
+            variableCreated[:] = self.get_data_by_column(variable[column]).as_matrix()
+        setattr(variableCreated, '_ChunkSizes', len(variableCreated[:]))
 
     def append_data(self, variable, variableNetCDF, dimensions):
         try:

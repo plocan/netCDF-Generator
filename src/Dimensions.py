@@ -1,3 +1,7 @@
+import sys
+
+from Log import Log
+
 class Dimensions():
 
     def __init__(self, metadata):
@@ -19,7 +23,8 @@ class Dimensions():
         try:
             dimensions = self.metadata['dimensions']
             for dimension in dimensions:
-                ncFile.createDimension(dimension['dimension_name'], dimension['length'])
+                if not dimension['length'] == "":
+                    ncFile.createDimension(dimension['dimension_name'], dimension['length'])
         except:
             Log().set_log_warning('Error writing dimensions')
             Log().set_log_info('The script has closed unsatisfactorily')

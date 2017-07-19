@@ -4,7 +4,7 @@ from Dimensions import Dimensions
 
 
 class EgoReaderStandardMetadata(object):
-    def __init__(self ):
+    def __init__(self):
         self.dimensions = {}
         self.glider_characteristics_variables = {}
         self.glider_deployment_variables = {}

@@ -75,29 +75,11 @@
       "dimension_name" : "STRING2",
       "length" : 2
     },{
-      "dimension_name" : "N_PARAM",
-      "length" : 7
-    },{
-      "dimension_name" : "N_TRANS_SYSTEM",
-      "length" : 1
-    },{
-      "dimension_name" : "N_POSITIONING_SYSTEM",
-      "length" : 3
-    },{
-      "dimension_name" : "N_DERIVATION",
-      "length" : 7
-    },{
       "dimension_name" : "N_HISTORY",
       "length" : 3
     },{
-      "dimension_name" : "TIME_GPS",
-      "length" : 4789
-    },{
       "dimension_name" : "TIME",
       "length" : 0
-    },{
-      "dimension_name" : "TIME_CURRENT",
-      "length" : 73
     }
   ],
   "glider_characteristics" : [

@@ -40,21 +40,23 @@ class NetCDFConverter(object):
         self.version = self.metadata.get_global_attributes().get_netcdf_version()
         self.temporalAppendPosition = {}
         self.globalAttributes = Metadata(metadataFile).get_global_attributes()
+        self.dimensions = self.metadata.get_dimensions()
         self.naming_authority = self.globalAttributes.attributesList['naming_authority']
 
         if self.naming_authority == 'EGO':
             self.ego_standard_metadata = EgoReaderStandardMetadata()
-            self.dimensions = self.ego_standard_metadata.get_dimensions()
-        else:
-            self.dimensions = self.metadata.get_dimensions()
+            self.dimensionsEgo = self.ego_standard_metadata.get_dimensions()
+
 
 
 
 
     def create_netcdf(self):
         self.globalAttributes.write_attributes(self.ncFile)
+        self.dimensions.write_dimensions(self.ncFile)
+
         if self.naming_authority == 'EGO':
-            self.dimensions.write_dimensions(self.ncFile)
+            self.dimensionsEgo.write_dimensions(self.ncFile)
 
             self.variables = self.metadata.get_variables()
             self.writer = Writer(self.data, self.dimensions, self.ncFile)
@@ -69,7 +71,6 @@ class NetCDFConverter(object):
             self.writer.write_variables_data(self.metadataData['variables'], self.variables, self.version)
 
         else:
-            self.dimensions.write_dimensions(self.ncFile)
             self.variables = self.metadata.get_variables()
             self.writer = Writer(self.data, self.dimensions, self.ncFile)
             self.writer.write_variables_data(self.metadataData['variables'], self.variables, self.version)
@@ -83,4 +84,4 @@ if __name__ == '__main__':
     NetCDFConverter(sys.argv[1], sys.argv[2], sys.argv[3])
 """
 if __name__ == '__main__':
-    NetCDFConverter("/Users/Loedded/Desktop/EgoGliders/EGO_nc_v1.json","/Users/Loedded/Desktop/EgoGliders/p201_ESTOC_2015_2.csv","/Users/Loedded/Downloads")
+    NetCDFConverter("/Users/Loedded/Desktop/EGO/ESTOC2014_1.json","/Users/Loedded/Desktop/EGO/20141216_estoc2014_1.csv","/Users/Loedded/Downloads")

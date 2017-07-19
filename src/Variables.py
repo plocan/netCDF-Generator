@@ -1,4 +1,5 @@
 from Checker import Checker
+from Log import Log
 
 
 class Variables():

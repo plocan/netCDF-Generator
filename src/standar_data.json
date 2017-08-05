@@ -87,7 +87,7 @@
       "variable_name" : "TRANS_SYSTEM",
       "ego_variable_name" : "TRANS_SYSTEM",
       "dim" : ["N_TRANS_SYSTEM", "STRING16"],
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Telecommunication system used",
       "_FillValue" : " "
     },
@@ -95,7 +95,7 @@
       "variable_name" : "TRANS_SYSTEM_ID",
       "ego_variable_name" : "TRANS_SYSTEM_ID",
       "dim" : ["N_TRANS_SYSTEM", "STRING32"],
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Program identifier used by the transmission system",
       "_FillValue" : " "
     },
@@ -103,7 +103,7 @@
       "variable_name": "TRANS_FREQUENCY",
       "ego_variable_name" : "TRANS_FREQUENCY",
       "dim" : ["N_TRANS_SYSTEM", "STRING16"],
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Frequency of transmission from the glider",
       "units" : "hertz",
       "_FillValue" : " "
@@ -112,7 +112,7 @@
       "variable_name": "POSITIONING_SYSTEM",
       "ego_variable_name" : "POSITIONING_SYSTEM",
       "dim" : ["N_POSITIONING_SYSTEM", "STRING8"],
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Positioning system",
       "_FillValue" : " "
     },
@@ -120,7 +120,7 @@
       "variable_name": "PLATFORM_FAMILY",
       "ego_variable_name" : "PLATFORM_FAMILY",
       "dim" : "STRING256",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Category of instrument",
       "conventions" : "EGO reference table 22",
       "_FillValue" : " "
@@ -129,7 +129,7 @@
       "variable_name": "PLATFORM_TYPE",
       "ego_variable_name" : "PLATFORM_TYPE",
       "dim" : "STRING32",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Type of glider",
       "conventions" : "EGO reference table XX",
       "_FillValue" : " "
@@ -138,7 +138,7 @@
       "variable_name": "PLATFORM_MAKER",
       "ego_variable_name" : "PLATFORM_MAKER",
       "dim" : "STRING256",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Name of the manufacturer",
       "_FillValue" : " "
     },
@@ -146,7 +146,7 @@
       "variable_name": "FIRMWARE_VERSION_NAVIGATION",
       "ego_variable_name" : "FIRMWARE_VERSION_NAVIGATION",
       "dim" : "STRING16",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Firmware version of the navigation controller board",
       "_FillValue" : " "
     },
@@ -154,7 +154,7 @@
       "variable_name": "FIRMWARE_VERSION_SCIENCE",
       "ego_variable_name" : "FIRMWARE_VERSION_SCIENCE",
       "dim" : "STRING16",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Firmware version of the scientific sensors controller board",
       "_FillValue" : " "
     },
@@ -162,7 +162,7 @@
       "variable_name": "MANUAL_VERSION",
       "ego_variable_name" : "MANUAL_VERSION",
       "dim" : "STRING16",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Manual version of the glider",
       "_FillValue" : " "
     },
@@ -170,7 +170,7 @@
       "variable_name": "GLIDER_SERIAL_NO",
       "ego_variable_name" : "GLIDER_SERIAL_NO",
       "dim" : "STRING16",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Serial number of the glider",
       "_FillValue" : " "
     },
@@ -178,7 +178,7 @@
       "variable_name": "STANDARD_FORMAT_ID",
       "ego_variable_name" : "STANDARD_FORMAT_ID",
       "dim" : "STRING16",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Standard format number which describes the data format type for each glider",
       "_FillValue" : " "
     },
@@ -186,7 +186,7 @@
       "variable_name": "DAC_FORMAT_ID",
       "ego_variable_name" : "DAC_FORMAT_ID",
       "dim" : "STRING16",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Format number used by the DAC to describe the data format type for each glider",
       "_FillValue" : " "
     },
@@ -194,7 +194,7 @@
       "variable_name": "WMO_INST_TYPE",
       "ego_variable_name" : "WMO_INST_TYPE",
       "dim" : "STRING4",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Coded instrument type",
       "conventions" : "EGO reference table 8",
       "_FillValue" : " "
@@ -203,7 +203,7 @@
       "variable_name": "PROJECT_NAME",
       "ego_variable_name" : "PROJECT_NAME",
       "dim" : "STRING64",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Program under which the glider was deployed",
       "_FillValue" : " "
 
@@ -212,7 +212,7 @@
       "variable_name": "DATA_CENTRE",
       "ego_variable_name" : "DATA_CENTRE",
       "dim" : "STRING2",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Data centre in charge of glider real-time processing",
       "conventions" : "EGO reference table 4",
       "_FillValue" : " "
@@ -221,7 +221,7 @@
       "variable_name": "PI_NAME",
       "ego_variable_name" : "PI_NAME",
       "dim" : "STRING64",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Name of the Principal Investigator",
       "_FillValue" : " "
     },
@@ -229,7 +229,7 @@
       "variable_name": "ANOMALY",
       "ego_variable_name" : "ANOMALY",
       "dim" : "STRING256",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Describe any anomalies or problems the glider may have had",
       "_FillValue" : " "
     },
@@ -237,7 +237,7 @@
       "variable_name": "BATTERY_TYPE",
       "ego_variable_name" : "BATTERY_TYPE",
       "dim" : "STRING64",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Type of battery packs in the glider",
       "_FillValue" : " "
     },
@@ -245,7 +245,7 @@
       "variable_name": "BATTERY_PACKS",
       "ego_variable_name" : "BATTERY_PACKS",
       "dim" : "STRING64",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Configuration of battery packs in the glider",
       "_FillValue" : " "
     },
@@ -253,7 +253,7 @@
       "variable_name": "SPECIAL_FEATURES",
       "ego_variable_name" : "SPECIAL_FEATURES",
       "dim" : "STRING1024",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Extra features of the glider (algorithms, compressee etc.)",
       "_FillValue" : " "
     },
@@ -261,7 +261,7 @@
       "variable_name": "GLIDER_OWNER",
       "ego_variable_name" : "GLIDER_OWNER",
       "dim" : "STRING64",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Glider owner",
       "_FillValue" : " "
     },
@@ -269,7 +269,7 @@
       "variable_name": "OPERATING_INSTITUTION",
       "ego_variable_name" : "OPERATING_INSTITUTION",
       "dim" : "STRING64",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Operating institution of the glider",
       "_FillValue" : " "
     },
@@ -277,7 +277,7 @@
       "variable_name": "CUSTOMIZATION",
       "ego_variable_name" : "CUSTOMIZATION",
       "dim" : "STRING1024",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Glider customization, i.e. (institutionand modifications)",
       "_FillValue" : " "
     }
@@ -287,7 +287,7 @@
       "variable_name" : "DEPLOYMENT_START_DATE",
       "ego_variable_name" : "DEPLOYMENT_START_DATE",
       "dim" : "DATE_TIME",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Date (UTC) of the deployment",
       "conventions" : "YYYYMMDDHHMISS",
       "_FillValue" : " "
@@ -329,7 +329,7 @@
       "variable_name": "DEPLOYMENT_PLATFORM",
       "ego_variable_name" : "DEPLOYMENT_PLATFORM",
       "dim" : "STRING32",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Identifier of the deployment platform",
       "_FillValue" : " "
     },
@@ -337,7 +337,7 @@
       "variable_name": "DEPLOYMENT_CRUISE_ID",
       "ego_variable_name" : "DEPLOYMENT_CRUISE_ID",
       "dim" : "STRING32",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Identifier of the cruise that deployed the glider",
       "_FillValue" : " "
     },
@@ -345,7 +345,7 @@
       "variable_name": "DEPLOYMENT_REFERENCE_STATION_ID",
       "ego_variable_name" : "DEPLOYMENT_REFERENCE_STATION_ID",
       "dim" : "STRING256",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Identifier of stations used to verify the parameter measurements",
       "_FillValue" : " "
     },
@@ -353,7 +353,7 @@
       "variable_name": "DEPLOYMENT_END_DATE",
       "ego_variable_name" : "DEPLOYMENT_END_DATE",
       "dim" : "DATE_TIME",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Date (UTC) of the glider recovery",
       "conventions" : "YYYYMMDDHHMISS",
       "_FillValue" : " "
@@ -395,7 +395,7 @@
       "variable_name": "DEPLOYMENT_END_STATUS",
       "ego_variable_name" : "DEPLOYMENT_END_STATUS",
       "dim" : "",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Status of the end of mission of the glider",
       "conventions" : "R: retrieved, L: lost",
       "_FillValue" : " "
@@ -404,7 +404,7 @@
       "variable_name": "DEPLOYMENT_OPERATOR",
       "ego_variable_name" : "DEPLOYMENT_OPERATOR",
       "dim" : "STRING256",
-      "typeof" : "char",
+      "typeof" : "S1",
       "long_name" : "Name of the person in charge of the glider deployment",
       "_FillValue" : " "
     }

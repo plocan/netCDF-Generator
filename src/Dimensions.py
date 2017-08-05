@@ -35,3 +35,11 @@ class Dimensions():
 
     def get_dimensions_list(self):
         return self.dimensionsList
+
+    def get_metadata_dimension(self):
+        returnDim = {}
+        dim = self.metadata['dimensions']
+        for d in dim:
+            returnDim[d["dimension_name"]] = d["length"]
+        return returnDim
+

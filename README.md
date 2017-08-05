@@ -46,6 +46,7 @@ complying the **OceanSites** standard and the **EgoGliders** standard for *time 
 outside English alphabet. For example: º, ò, í, etc.
 - If you put a different name than standard names you will have to use that name 
 in the JSON DataColumn attribute of the variable.
+-This software has support for log, but for the use, it's necessary upgrade to root for his use.
 
 
 ## What could the code do in the future?
@@ -94,10 +95,10 @@ Version 1.0
 
 ## Download
 
-* [Version 1.0](http://192.168.53.152/Data-Service/netCDF-Generator/repository/archive.zip?ref=master)[.zip]
-* [Version 1.0](http://192.168.53.152/Data-Service/netCDF-Generator/repository/archive.tar.gz?ref=master)[.tar.gz]
-* [Version 1.0](http://192.168.53.152/Data-Service/netCDF-Generator/repository/archive.tar.bz2?ref=master)[.tar.bz2]
-* [Version 1.0](http://192.168.53.152/Data-Service/netCDF-Generator/repository/archive.tar?ref=master)[.tar]
+* [Version 1.0](https://github.com/plocan/netCDF-Generator/archive/master.zip)[.zip]
+* [Version 1.0](https://github.com/plocan/netCDF-Generator/archive/master.tar.gz)[.tar.gz]
+* [Version 1.0](https://github.com/plocan/netCDF-Generator/archive/master.tar.bz2)[.tar.bz2]
+* [Version 1.0](https://github.com/plocan/netCDF-Generator/archive/master.tar)[.tar]
 
 
 ## How-to use this code
@@ -113,9 +114,14 @@ $ python NetCDFConverter.py /Users/user/Documents/example.json /Users/user/Docum
 ## Authors
 
 * **Tania Morales** - *Team manager* - tania.morales@plocan.eu
+
+OceanSite developers:
 * **Pablo Armas Matín** - *Developer* - pabloarmasm@gmail.com
 * **Juan Carlos Arroyo Herrera** - *Developer* - jcah20022@gmail.com
 * **Ismael Romero Rando** - *Developer* - ismael03011991@gmail.com
+
+EgoGlider developer:
+* **Pablo Armas Matín** - *Developer* - pabloarmasm@gmail.com
 
 ## Contact
 #### PLOCAN (Plataforma Oceánica de Canarias)

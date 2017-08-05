@@ -8,6 +8,9 @@ from Metadata import *
 from Writer import Writer
 from Checker import Checker
 from EgoReaderStandardMetadata import EgoReaderStandardMetadata
+from Data_ego import  *
+from src.writer_ego import writer_ego
+from src.writer_ego_standard import writer_ego_standard
 
 
 class NetCDFConverter(object):
@@ -44,8 +47,10 @@ class NetCDFConverter(object):
         self.naming_authority = self.globalAttributes.attributesList['naming_authority']
 
         if self.naming_authority == 'EGO':
+            self.data_ego = Data_ego(csvFile)
             self.ego_standard_metadata = EgoReaderStandardMetadata()
             self.dimensionsEgo = self.ego_standard_metadata.get_dimensions()
+            self.metadata.change_variable()
 
 
 
@@ -58,17 +63,18 @@ class NetCDFConverter(object):
         if self.naming_authority == 'EGO':
             self.dimensionsEgo.write_dimensions(self.ncFile)
 
-            self.variables = self.metadata.get_variables()
-            self.writer = Writer(self.data, self.dimensions, self.ncFile)
-            self.writer.write_variables_data(self.metadataData['variables'], self.variables, self.version)
-
             self.variables = self.ego_standard_metadata.get_glider_characteristics_variables()
-            self.writer = Writer(self.data, self.dimensions, self.ncFile)
-            self.writer.write_variables_data(self.metadataData['variables'], self.variables, self.version)
+            writer = writer_ego_standard(self.dimensions.get_metadata_dimension())
+            writer.write(self.variables, self.metadataData['glider_characteristics'], self.ncFile)
+            #self.writer.write_variables_data(self.metadataData['glider_characteristics'], self.variables, self.version)
 
             self.variables = self.ego_standard_metadata.get_glider_deployment_variables()
-            self.writer = Writer(self.data, self.dimensions, self.ncFile)
-            self.writer.write_variables_data(self.metadataData['variables'], self.variables, self.version)
+            writer = writer_ego_standard(self.dimensions.get_metadata_dimension())
+            writer.write(self.variables, self.metadataData['glider_deployment'], self.ncFile)
+
+            self.variables = self.metadata.get_variables()
+            self.writer_ego = writer_ego(self.data_ego, self.dimensions, self.ncFile)
+            self.writer_ego.write_variables_data(self.metadataData['variables'], self.variables, self.version)
 
         else:
             self.variables = self.metadata.get_variables()

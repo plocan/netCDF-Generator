@@ -4,12 +4,12 @@
 ## Table of contents
 
 * [Introduction](#Introduction)
-* [What does the code do?](#What does the code do?)
-* [What the code doesn't do?](#What the code doesn't do?)
-* [What could the code do in the future?](#What could the code do in the future?)
+* [What does the code do?] (#What does the code do?)
+* [What the code doesn't do?] (#What the code doesn't do?)
+* [What could the code do in the future?] (#What could the code do in the future?)
 * [Prerequisites](#Prerequisites)
     * [Libraries](#Libraries)
-    * [JSON Format](#JSON Format)
+    * [JSON Format] (#JSON Format)
         * [OceanSites Standard](#OceanSites Standard)
         * [EgoGliders Standard](#EgoGliders Standard)
 * [Version](#Version)
@@ -76,14 +76,14 @@ in the JSON DataColumn attribute of the variable.
 
 * For more information about the standard see [Data Format Reference Manual](http://www.oceansites.org/docs/oceansites_data_format_reference_manual.pdf) file.
 
-* To view the sample metadata file see [OceanSites JSON example](http://192.168.53.152/Data-Service/netCDF-Generator/blob/master/docs/osexample.json) file.
+* To view the sample metadata file see [OceanSites JSON example](https://github.com/plocan/netCDF-Generator/blob/master/docs/osexample.json) file.
 
 #### EgoGliders Standard v1.2
 
 
 * For more information about the standard see [Data Format Reference Manual](http://archimer.ifremer.fr/doc/00239/34980/44905.pdf) file.
 
-* To view the sample metadata file see [EgoGliders JSON example](http://192.168.53.152/Data-Service/netCDF-Generator/blob/master/docs/egexample.json) file.
+* To view the sample metadata file see [EgoGliders JSON example](https://github.com/plocan/netCDF-Generator/blob/master/docs/egexample.json) file.
 
 ## Version
 
@@ -91,7 +91,7 @@ Version 1.0
 
 ## License
 
-* see [LICENSE](http://192.168.53.152/Data-Service/netCDF-Generator/blob/master/LICENSE.md) file.
+* see [LICENSE](https://github.com/plocan/netCDF-Generator/blob/master/LICENSE.md) file.
 
 ## Download
 

@@ -4,12 +4,12 @@
 ## Table of contents
 
 * [Introduction](#Introduction)
-* [What does the code do?] (#What does the code do?)
-* [What the code doesn't do?] (#What the code doesn't do?)
-* [What could the code do in the future?] (#What could the code do in the future?)
+* [What does the code do?](#What does the code do?)
+* [What the code doesn't do?](What the code doesn't do?)
+* [What could the code do in the future?](#What could the code do in the future?)
 * [Prerequisites](#Prerequisites)
     * [Libraries](#Libraries)
-    * [JSON Format] (#JSON Format)
+    * [JSON Format](#JSON Format)
         * [OceanSites Standard](#OceanSites Standard)
         * [EgoGliders Standard](#EgoGliders Standard)
 * [Version](#Version)
@@ -116,12 +116,12 @@ $ python NetCDFConverter.py /Users/user/Documents/example.json /Users/user/Docum
 * **Tania Morales** - *Team manager* - tania.morales@plocan.eu
 
 OceanSite developers:
-* **Pablo Armas Matín** - *Developer* - pabloarmasm@gmail.com
-* **Juan Carlos Arroyo Herrera** - *Developer* - jcah20022@gmail.com
+* **Pablo Armas Matín** - *Developer* - pabloarmasm@gmail.com @PabloArmasM
+* **Juan Carlos Arroyo Herrera** - *Developer* - jcah20022@gmail.com @bultrifacio
 * **Ismael Romero Rando** - *Developer* - ismael03011991@gmail.com
 
 EgoGlider developer:
-* **Pablo Armas Matín** - *Developer* - pabloarmasm@gmail.com
+* **Pablo Armas Matín** - *Developer* - pabloarmasm@gmail.com @PabloArmasM
 
 ## Contact
 #### PLOCAN (Plataforma Oceánica de Canarias)

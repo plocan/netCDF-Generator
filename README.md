@@ -4,8 +4,8 @@
 ## Table of contents
 
 * [Introduction](#Introduction)
-* [What does the code do?](#What does the code do?)
-* [What the code doesn't do?](What the code doesn't do?)
+* [What does the code do?](#What-does-the-code-do?)
+* [What the code doesn't do?](#What the code doesn't do?)
 * [What could the code do in the future?](#What could the code do in the future?)
 * [Prerequisites](#Prerequisites)
     * [Libraries](#Libraries)
@@ -116,12 +116,12 @@ $ python NetCDFConverter.py /Users/user/Documents/example.json /Users/user/Docum
 * **Tania Morales** - *Team manager* - tania.morales@plocan.eu
 
 OceanSite developers:
-* **Pablo Armas Matín** - *Developer* - pabloarmasm@gmail.com @PabloArmasM
-* **Juan Carlos Arroyo Herrera** - *Developer* - jcah20022@gmail.com @bultrifacio
+* **Pablo Armas Matín** - *Developer* - pabloarmasm@gmail.com - GitHub: **PabloArmasM**
+* **Juan Carlos Arroyo Herrera** - *Developer* - jcah20022@gmail.com - GitHub: **bultrifacio**
 * **Ismael Romero Rando** - *Developer* - ismael03011991@gmail.com
 
 EgoGlider developer:
-* **Pablo Armas Matín** - *Developer* - pabloarmasm@gmail.com @PabloArmasM
+* **Pablo Armas Matín** - *Developer* - pabloarmasm@gmail.com - GitHub: **PabloArmasM**
 
 ## Contact
 #### PLOCAN (Plataforma Oceánica de Canarias)

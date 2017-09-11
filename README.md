@@ -3,20 +3,20 @@
 
 ## Table of contents
 
-* [Introduction](#Introduction)
-* [What does the code do?](#What-does-the-code-do?)
-* [What the code doesn't do?](#What the code doesn't do?)
-* [What could the code do in the future?](#What could the code do in the future?)
-* [Prerequisites](#Prerequisites)
-    * [Libraries](#Libraries)
-    * [JSON Format](#JSON Format)
-        * [OceanSites Standard](#OceanSites Standard)
-        * [EgoGliders Standard](#EgoGliders Standard)
-* [Version](#Version)
-* [License](#License)
-* [Download](#Download)
-* [How-to use this code](#How-to use this code)
-* [Authors](#Authors)
+* Introduction
+* What does the code do?
+* What the code doesn't do?
+* What could the code do in the future?
+* Prerequisites
+    * Libraries
+    * JSON Format
+        * OceanSites Standard
+        * EgoGliders Standard
+* Version
+* License
+* Download
+* How-to use this code
+* Authors
 
 
 ## Introduction
@@ -91,7 +91,7 @@ Version 1.0
 
 ## License
 
-* see [LICENSE](https://github.com/plocan/netCDF-Generator/blob/master/LICENSE.md) file.
+* See [LICENSE](https://github.com/plocan/netCDF-Generator/blob/master/LICENSE.md) file.
 
 ## Download
 

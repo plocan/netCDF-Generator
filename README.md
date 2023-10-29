@@ -1,4 +1,4 @@
-![Picture](http://empleo.plocan.eu/static/plocan.png)
+![Picture](https://plocan.eu/wp-content/uploads/PLOC_logo.svg)
 # NetCDF-Generator
 
 ## Table of contents
